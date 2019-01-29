@@ -24,8 +24,8 @@ import {
     html,
     property,
     query
-} from "@material/mwc-base/base-element";
-import { emit } from '@material/mwc-base/utils';
+} from "@authentic/mwc-base/base-element";
+import { emit } from '@authentic/mwc-base/utils';
 import { classMap } from 'lit-html/directives/class-map.js';
 import MDCDialogFoundation from "@material/dialog/foundation";
 
