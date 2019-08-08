@@ -214,6 +214,7 @@ export class ListItem extends LitElement {
   }
 
   public getAttribute(attr) {
+    return '';
     return this[attr];
   }
 
