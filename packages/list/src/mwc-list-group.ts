@@ -20,40 +20,46 @@ import {
   query,
   html,
   classMap,
-  property
+  findAssignedElements
 } from '@material/mwc-base/base-element';
+import { List as MWCList } from './mwc-list';
 
-import { style } from './mwc-list-item-css';
+import { style } from './mwc-list-group-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-list-divider-2': ListDivider;
+    'mwc-list-group': ListGroup;
   }
 }
 
-@customElement('mwc-list-divider-2' as any)
-export class ListDivider extends LitElement {
+@customElement('mwc-list-group' as any)
+export class ListGroup extends LitElement {
 
-  @query('.mdc-list-divider')
+  @query('.mdc-list-group')
   protected mdcRoot!: HTMLElement;
 
-  @property({ type: Boolean })
-  public inset = false;
+  @query('slot')
+  protected slotEl!: HTMLSlotElement;
 
-  @property({ type: Boolean })
-  public padded = false;
+  protected get listElements(): MWCList[] {
+    return this.slotEl && findAssignedElements(this.slotEl, 'mwc-list') as MWCList[];
+  }
 
   static styles = style;
 
   render() {
     const classes = {
-      'mdc-list-divider': true,
-      'mdc-list-divider--inset': this.inset,
-      'mdc-list-divider--padded': this.padded
+      'mdc-list-group': true,
     };
 
     return html`
-      <div class="${classMap(classes)}"></div>
+      <div class="${classMap(classes)}">
+        <slot></slot>
+      </div>
     `;
+  }
+
+  firstUpdated() {
+    this.listElements.forEach(item => item.group = true);
   }
 }

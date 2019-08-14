@@ -14,23 +14,46 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-import { LitElement, html, customElement } from 'lit-element';
+import {
+  LitElement,
+  customElement,
+  query,
+  html,
+  classMap,
+  property
+} from '@material/mwc-base/base-element';
 
-import { style } from './mwc-list-item-separator-css';
+import { style } from './mwc-list-item-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-list-item-separator': ListItemSeparator;
+    'mwc-list-divider': ListDivider;
   }
 }
 
-@customElement('mwc-list-item-separator' as any)
-export class ListItemSeparator extends LitElement {
+@customElement('mwc-list-divider' as any)
+export class ListDivider extends LitElement {
+
+  @query('.mdc-list-divider')
+  protected mdcRoot!: HTMLElement;
+
+  @property({ type: Boolean })
+  public inset = false;
+
+  @property({ type: Boolean })
+  public padded = false;
 
   static styles = style;
 
   render() {
+    const classes = {
+      'mdc-list-divider': true,
+      'mdc-list-divider--inset': this.inset,
+      'mdc-list-divider--padded': this.padded
+    };
+
     return html`
-      <div class="mdc-list-divider" role="separator"></div>`;
+      <div class="${classMap(classes)}"></div>
+    `;
   }
 }

@@ -26,11 +26,11 @@ limitations under the License.
   <script type="module" src="../node_modules/@material/mwc-icon-button/mwc-icon-button.js"></script>
   <script type="module" src="../node_modules/@material/mwc-list/mwc-list.js"></script>
   <script type="module" src="../node_modules/@material/mwc-list/mwc-list-item.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-list-2/mwc-list.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-list-2/mwc-list-item.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-list-2/mwc-list-divider.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-list-2/mwc-list-group.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-list-2/mwc-list-group-header.js"></script>
+  <script type="module" src="../node_modules/@material/mwc-list/mwc-list.js"></script>
+  <script type="module" src="../node_modules/@material/mwc-list/mwc-list-item.js"></script>
+  <script type="module" src="../node_modules/@material/mwc-list/mwc-list-divider.js"></script>
+  <script type="module" src="../node_modules/@material/mwc-list/mwc-list-group.js"></script>
+  <script type="module" src="../node_modules/@material/mwc-list/mwc-list-group-header.js"></script>
   <script type="module" src="../node_modules/@material/mwc-icon/mwc-icon.js"></script>
   <script type="module" src="../node_modules/@material/mwc-radio/mwc-radio.js"></script>
   <script type="module" src="../node_modules/@material/mwc-checkbox/mwc-checkbox.js"></script>
@@ -73,31 +73,31 @@ limitations under the License.
       <section>
         <h2>Single-Line</h2>
         <div class="demo-list">
-          <mwc-list-2>
-            <mwc-list-item-2>Line item</mwc-list-item-2>
-            <mwc-list-item-2>Line item</mwc-list-item-2>
-            <mwc-list-item-2 disabled>Line item</mwc-list-item-2>
-          </mwc-list-2>
+          <mwc-list>
+            <mwc-list-item>Line item</mwc-list-item>
+            <mwc-list-item>Line item</mwc-list-item>
+            <mwc-list-item disabled>Line item</mwc-list-item>
+          </mwc-list>
         </div>
       </section>
 
       <section>
         <h2>Two-Line - Single selection with activated item</h2>
         <div class="demo-list">
-          <mwc-list-2 type="two-line" singleSelection wrapFocus>
-            <mwc-list-item-2>
+          <mwc-list type="two-line" singleSelection wrapfocus>
+            <mwc-list-item>
               <span slot="primary">First-line text</span>
               <span slot="secondary">Second-line text</span>  
-            </mwc-list-item-2>
-            <mwc-list-item-2 activated>
+            </mwc-list-item>
+            <mwc-list-item activated>
               <span slot="primary">First-line text</span>
               <span slot="secondary">Second-line text</span>
-            </mwc-list-item-2>
-            <mwc-list-item-2 disabled>
+            </mwc-list-item>
+            <mwc-list-item disabled>
               <span slot="primary">First-line text</span>
               <span slot="secondary">Second-line text</span>
-            </mwc-list-item-2>
-          </mwc-list-2>
+            </mwc-list-item>
+          </mwc-list>
         </div>
       </section>
 
@@ -107,30 +107,30 @@ limitations under the License.
           <mwc-list-group>
             <mwc-list-group-header>List 1</mwc-list-group-header>
 
-            <mwc-list-2>
-              <mwc-list-item-2>
+            <mwc-list>
+              <mwc-list-item>
                 <mwc-checkbox slot="graphic"></mwc-checkbox>
                 Line item
-              </mwc-list-item-2>
-              <mwc-list-item-2>
+              </mwc-list-item>
+              <mwc-list-item>
                 <mwc-checkbox slot="graphic"></mwc-checkbox>
                 Line item
-              </mwc-list-item-2>
-            </mwc-list-2>
+              </mwc-list-item>
+            </mwc-list>
 
-            <mwc-list-divider-2></mwc-list-divider-2>
+            <mwc-list-divider></mwc-list-divider>
 
             <mwc-list-group-header>List 2</mwc-list-group-header>
 
-            <mwc-list-2>
-              <mwc-list-item-2>
+            <mwc-list>
+              <mwc-list-item>
                 <mwc-checkbox slot="meta"></mwc-checkbox>
                 Line item
-              </mwc-list-item-2>
-              <mwc-list-item-2>
+              </mwc-list-item>
+              <mwc-list-item>
                 <mwc-checkbox slot="meta"></mwc-checkbox>
                 Line item
-              </mwc-list-item-2>
+              </mwc-list-item>
           </mwc-list-group>
         </div>
       </section>
@@ -138,258 +138,86 @@ limitations under the License.
       <section>
         <h2>Avatar List - Single selection</h2>
         <div class="demo-list">
-          <mwc-list-2 type="two-line" avatarList singleSelection>
-            <mwc-list-item-2>
+          <mwc-list type="two-line" avatarList singleSelection>
+            <mwc-list-item>
               <mwc-icon slot="graphic" aria-hidden>folder</mwc-icon>
               <span slot="primary">First-line text</span>
               <span slot="secondary">Second-line text</span>
               <mwc-icon-button icon="info" slot="meta"></mwc-icon-button>
-            </mwc-list-item-2>
+            </mwc-list-item>
 
-            <mwc-list-divider-2 padded></mwc-list-divider-2>
+            <mwc-list-divider padded></mwc-list-divider>
 
-            <mwc-list-item-2>
+            <mwc-list-item>
               <mwc-icon slot="graphic" aria-hidden>folder</mwc-icon>
               <span slot="primary">First-line text</span>
               <span slot="secondary">Second-line text</span>
               <mwc-icon-button icon="info" slot="meta"></mwc-icon-button>
-            </mwc-list-item-2>
-          </mwc-list-2>
+            </mwc-list-item>
+          </mwc-list>
         </div>
       </section>
 
       <section>
         <h2>Non Interactive with Leading Icon</h2>
         <div class="demo-list">
-          <mwc-list-2 nonInteractive>
-            <mwc-list-item-2>
+          <mwc-list nonInteractive>
+            <mwc-list-item>
               <mwc-icon slot="graphic" aria-hidden>wifi</mwc-icon>
               Line item
-            </mwc-list-item-2>
-            <mwc-list-item-2>
+            </mwc-list-item>
+            <mwc-list-item>
               <mwc-icon slot="graphic" aria-hidden>bluetooth</mwc-icon>
               Line item
-            </mwc-list-item-2>
-            <mwc-list-item-2>
+            </mwc-list-item>
+            <mwc-list-item>
               <mwc-icon slot="graphic" aria-hidden>data_usage</mwc-icon>
               Line item
-            </mwc-list-item-2>
-          </mwc-list-2>
+            </mwc-list-item>
+          </mwc-list>
         </div>
       </section>
 
       <section>
         <h2>Expand and Collapse</h2>
         <div class="demo-list">
-          <mwc-list-2>
-            <mwc-list-item-2 expandable>
+          <mwc-list>
+            <mwc-list-item expandable>
               <mwc-icon slot="graphic" aria-hidden>local_dining</mwc-icon>
               Line item
-              <mwc-list-2 slot="content">
-                <mwc-list-item-2><mwc-checkbox slot="graphic"></mwc-checkbox> Line item</mwc-list-item-2>
-                <mwc-list-item-2><mwc-checkbox slot="graphic"></mwc-checkbox> Line item</mwc-list-item-2>
-                <mwc-list-item-2><mwc-checkbox slot="graphic"></mwc-checkbox> Line item</mwc-list-item-2>
-              </mwc-list-2>
-            </mwc-list-item-2>
-            <mwc-list-item-2 expandable>
+              <mwc-list slot="content">
+                <mwc-list-item><mwc-checkbox slot="graphic"></mwc-checkbox> Line item</mwc-list-item>
+                <mwc-list-item><mwc-checkbox slot="graphic"></mwc-checkbox> Line item</mwc-list-item>
+                <mwc-list-item><mwc-checkbox slot="graphic"></mwc-checkbox> Line item</mwc-list-item>
+              </mwc-list>
+            </mwc-list-item>
+            <mwc-list-item expandable>
               <mwc-icon slot="graphic" aria-hidden>data_usage</mwc-icon>
               Line item
-              <mwc-list-2 slot="content">
-                <mwc-list-item-2>Line item</mwc-list-item-2>
-                <mwc-list-item-2>Line item</mwc-list-item-2>
-                <mwc-list-item-2>Line item</mwc-list-item-2>
-              </mwc-list-2>
-            </mwc-list-item-2>
-            <mwc-list-item-2 expandable>
+              <mwc-list slot="content">
+                <mwc-list-item>Line item</mwc-list-item>
+                <mwc-list-item>Line item</mwc-list-item>
+                <mwc-list-item>Line item</mwc-list-item>
+              </mwc-list>
+            </mwc-list-item>
+            <mwc-list-item expandable>
               Line item
-              <mwc-list-2 slot="content">
-                <mwc-list-item-2>Line item</mwc-list-item-2>
-                <mwc-list-item-2>Line item</mwc-list-item-2>
-                <mwc-list-item-2>Line item</mwc-list-item-2>
-              </mwc-list-2>
-            </mwc-list-item-2>
-            <mwc-list-item-2 expandable>
+              <mwc-list slot="content">
+                <mwc-list-item>Line item</mwc-list-item>
+                <mwc-list-item>Line item</mwc-list-item>
+                <mwc-list-item>Line item</mwc-list-item>
+              </mwc-list>
+            </mwc-list-item>
+            <mwc-list-item expandable>
               Line item
-              <mwc-list-2 slot="content">
-                <mwc-list-item-2>Line item</mwc-list-item-2>
-                <mwc-list-item-2>Line item</mwc-list-item-2>
-                <mwc-list-item-2>Line item</mwc-list-item-2>
-              </mwc-list-2>
-            </mwc-list-item-2>
-          </mwc-list-2>
+              <mwc-list slot="content">
+                <mwc-list-item>Line item</mwc-list-item>
+                <mwc-list-item>Line item</mwc-list-item>
+                <mwc-list-item>Line item</mwc-list-item>
+              </mwc-list>
+            </mwc-list-item>
+          </mwc-list>
         </div>
-      </section>
-
-      <section>
-        <h2>Examples</h2>
-        <mwc-list lines="2">
-          <mwc-list-item>
-            <mwc-icon slot="graphic" aria-hidden>folder</mwc-icon>
-            Photos
-            <span slot="secondary">Jan 9, 2014</span>
-            <mwc-icon-button icon="info" slot="meta"></mwc-icon-button>
-          </mwc-list-item>
-          <mwc-list-item activated>
-            <mwc-icon slot="graphic" aria-hidden>folder</mwc-icon>
-            Recipies
-            <span slot="secondary">Jan 17, 2014</span>
-            <mwc-icon-button icon="info" slot="meta"></mwc-icon-button>
-          </mwc-list-item>
-          <mwc-list-item>
-            <mwc-icon slot="graphic" aria-hidden>folder</mwc-icon>
-            Work
-            <span slot="secondary">Jan 28, 2014</span>
-            <mwc-icon-button icon="info" slot="meta"></mwc-icon-button>
-          </mwc-list-item>
-        </mwc-list>
-      </section>
-
-      <section>
-        <h2>Simple</h2>
-        <mwc-list>
-          <mwc-list-item>
-            Luis Sardon
-          </mwc-list-item>
-          <mwc-list-item>
-            Timothy Johnson
-          </mwc-list-item>
-          <mwc-list-item selected>
-            Molly Micheux
-          </mwc-list-item>
-          <mwc-list-item>
-            Rodrigo Aguilar
-          </mwc-list-item>
-          <mwc-list-item disabled>
-            Some former employee that didn't work out
-          </mwc-list-item>
-          <mwc-list-item>
-            Walter Rojas
-          </mwc-list-item>
-          <mwc-list-item>
-            Cate Raushenberger
-          </mwc-list-item>
-        </mwc-list>
-      </section>
-
-      <section>
-        <h2>Simple w/ Ripple</h2>
-        <mwc-list ripple>
-          <mwc-list-item>
-            Luis Sardon
-          </mwc-list-item>
-          <mwc-list-item>
-            Timothy Johnson
-          </mwc-list-item>
-          <mwc-list-item>
-            Molly Micheux
-          </mwc-list-item>
-          <mwc-list-item>
-            Rodrigo Aguilar
-          </mwc-list-item>
-        </mwc-list>
-      </section>
-
-      <section>
-        <h2>Non Interactive</h2>
-        <mwc-list nonInteractive>
-          <mwc-list-item>
-            Luis Sardon
-          </mwc-list-item>
-          <mwc-list-item>
-            Timothy Johnson
-          </mwc-list-item>
-          <mwc-list-item>
-            Molly Micheux
-          </mwc-list-item>
-          <mwc-list-item>
-            Rodrigo Aguilar
-          </mwc-list-item>
-        </mwc-list>
-      </section>
-
-      <section>
-        <h2>Two-line Variant</h2>
-        <mwc-list lines="2">
-          <mwc-list-item>
-            Luis Sardon
-            <span slot="secondary">4 niños</span>
-          </mwc-list-item>
-          <mwc-list-item>
-            Timothy Johnson
-            <span slot="secondary">4 children</span>
-          </mwc-list-item>
-          <mwc-list-item>
-            Molly Micheux
-            <span slot="secondary">not gonna happen</span>
-          </mwc-list-item>
-          <mwc-list-item>
-            Rodrigo Aguilar
-            <span slot="secondary">it's a mystery</span>
-          </mwc-list-item>
-          <mwc-list-item disabled>
-            Steve Jansen
-            <span slot="secondary">3 wahoos</span>
-          </mwc-list-item>
-        </mwc-list>
-      </section>
-
-      <section>
-        <h2>With Icon/Graphics</h2>
-        <mwc-list>
-          <mwc-list-item>
-            <mwc-icon slot="graphic">wifi</mwc-icon>
-            Wireless Networking Available
-          </mwc-list-item>
-          <mwc-list-item>
-            <mwc-icon slot="graphic">bluetooth</mwc-icon>
-            Ur teeth will be blue
-          </mwc-list-item>
-          <mwc-list-item>
-            <mwc-icon slot="graphic">data_usage</mwc-icon>
-            IDK what this means
-          </mwc-list-item>
-        </mwc-list>
-      </section>
-
-      <section>
-        <h2>AvatarList Variant with Graphics</h2>
-        <mwc-list avatarList>
-          <mwc-list-item>
-            <img slot='graphic' width="40" height="40" src="https://avatars2.githubusercontent.com/u/1566?s=460&v=4" />
-            Timothy Johnson
-          </mwc-list-item>
-          <mwc-list-item>
-            <img slot='graphic' width="40" height="40" src="https://avatars2.githubusercontent.com/u/1566?s=460&v=4" />
-            Timbo Jojo
-          </mwc-list-item>
-        </mwc-list>
-      </section>
-
-      <h1> Older stuff below </h1>
-
-      <section>
-        <h4>Accordion - Expand and collapse</h4>
-        <mwc-list>
-          <mwc-list-item expandable>
-            Parent Category
-            <div slot="content">
-              <mwc-list-item>Child Category</mwc-list-item>
-              <mwc-list-item>Child Category</mwc-list-item>
-              <mwc-list-item>Child Category</mwc-list-item>
-              <mwc-list-item>Child Category</mwc-list-item>
-            </div>
-          </mwc-list-item>
-          <mwc-list-item expandable>
-            <mwc-icon slot="graphic">alarm_on</mwc-icon>
-            Alarms
-
-            <div slot="content">
-              <mwc-list-item indent>Daily</mwc-list-item>
-              <mwc-list-item indent>Weekly</mwc-list-item>
-              <mwc-list-item indent>Reminders</mwc-list-item>
-            </div>
-          </mwc-list-item>
-        </mwc-list>
       </section>
     </div>
   </div>

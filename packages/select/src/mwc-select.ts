@@ -72,9 +72,6 @@ export class Select extends FormElement {
   @query('.mdc-select__selected-text')
   protected _selectedText!: HTMLElement;
 
-  @query('.mdc-select__menu-anchor')
-  protected _menuAnchor!: HTMLElement;
-
   @query('slot[name="select"]')
   protected slotSelect!: HTMLSlotElement;
 
@@ -98,9 +95,7 @@ export class Select extends FormElement {
 
   @property({ type: String, reflect: true })
   @observer(function(this: Select, value: string) {
-    if (this.mdcFoundation.getValue() !== value) {
-      this.mdcFoundation && this.mdcFoundation.setValue(value);
-    }
+    this.mdcFoundation && this.mdcFoundation.setValue(value);
   })
   public value = '';
 
@@ -274,10 +269,7 @@ export class Select extends FormElement {
       openMenu: () => undefined,
       closeMenu: () => undefined,
       isMenuOpen: () => false,
-      setSelectedIndex: (index: number) => {
-        this._nativeControl!.selectedIndex = index;
-        this._setNativeSelectedIndex(index);
-      },
+      setSelectedIndex: (index: number) => this._setNativeSelectedIndex(index),
       setDisabled: (isDisabled: boolean) => {
         this._nativeControl!.disabled = isDisabled;
       },
@@ -309,6 +301,8 @@ export class Select extends FormElement {
         return this.value;
       },
       setValue: (value: string) => {
+        if (!this.slottedMenu!.items) return;
+
         const element = this.slottedMenu!.items.find(item => item['value'] === value);
         // const element = this.slottedMenu!.querySelector(`[${strings.ENHANCED_VALUE_ATTR}="${value}"]`);
         this._setEnhancedSelectedIndex(element ? this.slottedMenu!.items.indexOf(element) : -1);
@@ -492,6 +486,13 @@ export class Select extends FormElement {
       this.slottedMenu!.addEventListener(menuSurfaceConstants.strings.OPENED_EVENT, this._handleMenuOpened);
       this.slottedMenu!.addEventListener(MENU_EVENTS.selected, this._handleMenuSelected);
 
+      this.slottedMenu.updateComplete
+        .then(
+          () => {
+            this._enhancedSelectSetup();
+          }
+        );
+
       if (this.leadingIconElement) {
         this.slottedMenu.classList.add(cssClasses.WITH_LEADING_ICON);
       }
@@ -520,19 +521,6 @@ export class Select extends FormElement {
       (this._nativeControl && this._nativeControl.disabled)
     ) {
       this.disabled = true;
-    }
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-
-    if (this.slottedMenu) {
-      this.slottedMenu.updateComplete
-        .then(
-          () => {
-            this._enhancedSelectSetup();
-          }
-        );
     }
   }
 
@@ -631,7 +619,7 @@ export class Select extends FormElement {
   protected _onMenuSelected(evt) {
     this.selectedIndex = evt.detail.index;
     this._selectedItem = evt.detail.item;
-    this.value = evt.detail.item['value'];
+    this.value = this._selectedItem.value;
   }
 
   /**
@@ -657,9 +645,10 @@ export class Select extends FormElement {
   protected _enhancedSelectSetup() {
     const isDisabled = this.mdcRoot.classList.contains(cssClasses.DISABLED);
     this._selectedText!.setAttribute('tabindex', isDisabled ? '-1' : '0');
-    this.slottedMenu!.setAnchorElement(this.mdcRoot);
     this.slottedMenu!.setAnchorCorner(menuSurfaceConstants.Corner.BOTTOM_START);
+    this.slottedMenu!.setAnchorElement(this.mdcRoot);
     this.slottedMenu!.wrapFocus = false;
+    this.slottedMenu!.singleSelection = true;
   }
 
   /**
@@ -694,21 +683,22 @@ export class Select extends FormElement {
   }
 
   protected _setNativeSelectedIndex(index: number) {
+    this._nativeControl!.selectedIndex = index;
     this._selectedText!.textContent = this.slottedSelect!.options[index].textContent;
   }
 
   protected _setEnhancedSelectedIndex(index: number) {
     const selectedItem = this.slottedMenu!.items[index];
     this._selectedText!.textContent = selectedItem ? selectedItem.textContent!.trim() : '';
-    const previouslySelected = this._selectedItem;
+    // const previouslySelected = this._selectedItem;
 
-    if (previouslySelected) {
-      previouslySelected.selected = false;
-    }
+    // if (previouslySelected) {
+    //   previouslySelected.selected = false;
+    // }
 
-    if (selectedItem) {
-      selectedItem['selected'] = true;
-    }
+    // if (selectedItem) {
+    //   selectedItem['selected'] = true;
+    // }
 
     // Synchronize hidden input's value with data-value attribute of selected item.
     // This code path is also followed when setting value directly, so this covers all cases.

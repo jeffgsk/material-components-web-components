@@ -26,19 +26,20 @@ import {
   findAssignedElement
 } from '@material/mwc-base/base-element';
 import { MDCMenuFoundation, MDCMenuAdapter, Corner } from '@material/menu';
-import { cssClasses, DefaultFocusState } from '@material/menu/constants';
+import { DefaultFocusState } from '@material/menu/constants';
 import { MDCMenuSurface, MDCMenuSurfaceFactory } from '@material/menu-surface/component';
 import MDCMenuSurfaceFoundation from '@material/menu-surface/foundation';
 import { MDCMenuDistance } from '@material/menu-surface/types';
 import { List as MWCList } from '@material/mwc-list/mwc-list';
-import { strings as listStrings } from '@material/mwc-list/_constants';
+import { ListItem as MWCListItem } from '@material/mwc-list/mwc-list-item';
 
 import { style } from './mwc-menu-css';
 
 const menuSurfaceFactory: MDCMenuSurfaceFactory = el => new MDCMenuSurface(el);
 
 export const EVENTS = {
-  selected: 'selected'
+  selected: 'selected',
+  action: 'action'
 };
 
 @customElement('mwc-menu' as any)
@@ -74,6 +75,14 @@ export class Menu extends BaseElement {
   })
   public wrapFocus = false;
 
+  @property({ type: Boolean })
+  @observer(function (this: Menu, value: boolean) {
+    if (this.listEl) {
+      this.listEl.singleSelection = value;
+    }
+  })
+  public singleSelection = false;
+
   public get Corner() {
     return Corner;
   }
@@ -83,8 +92,8 @@ export class Menu extends BaseElement {
    * the items container that are proper list items, and not supplemental / presentational DOM
    * elements.
    */
-  get items(): Element[] {
-    return this.listEl ? this.listEl.listElements as Element[] : [];
+  get items(): MWCListItem[] {
+    return this.listEl ? this.listEl.listElements : [];
   }
 
   protected get listEl() {
@@ -127,12 +136,15 @@ export class Menu extends BaseElement {
       elementContainsClass: (element, className) => element.classList.contains(className),
       closeSurface: () => this.open = false,
       getElementIndex: (element) => {
-        return this.items.indexOf(element)
+        return this.items.indexOf(element as MWCListItem)
       },
       getParentElement: (element) => element.parentElement,
       getSelectedElementIndex: (selectionGroup) => {
-        const selectedListItem = selectionGroup.querySelector(`.${cssClasses.MENU_SELECTED_LIST_ITEM}`);
-        return selectedListItem ? this.items.indexOf(selectedListItem) : -1;
+        // TODO(luissardon): Implement selection group
+        // const selectedListItem = selectionGroup.querySelector(`.${cssClasses.MENU_SELECTED_LIST_ITEM}`);
+        // return selectedListItem ? this.items.indexOf(selectedListItem) : -1;
+        console.log(selectionGroup)
+        return selectionGroup && -1;
       },
       notifySelected: (evtData) => {
         emit(this, EVENTS.selected, {
@@ -142,7 +154,7 @@ export class Menu extends BaseElement {
       },
       getMenuItemCount: () => this.items.length,
       focusItemAtIndex: (index) => {
-        this.listEl.focusItemAtIndex(index, true);
+        this.items[index].focus();
       },
       focusListRoot: () => this.listEl.focus()
     }
@@ -168,7 +180,7 @@ export class Menu extends BaseElement {
 
     if (this.listEl) {
       this.listEl.addEventListener('keydown', this._handleKeydown);
-      this.listEl.addEventListener(listStrings.ACTION_EVENT, this._handleItemAction);
+      this.listEl.addEventListener(EVENTS.action, this._handleItemAction);
     }
   }
 
@@ -177,7 +189,7 @@ export class Menu extends BaseElement {
   }
 
   protected _onItemAction(evt) {
-    this.mdcFoundation.handleItemAction(this.items[evt.detail.listIndex]);
+    this.mdcFoundation.handleItemAction(this.items[evt.detail.index]);
   }
 
   protected _onMenuSurfaceOpened(evt) {
