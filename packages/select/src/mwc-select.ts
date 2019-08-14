@@ -65,6 +65,9 @@ declare global {
 export class Select extends FormElement {
   @query('.mdc-select')
   protected mdcRoot!: HTMLElementWithRipple;
+  
+  @query('.mdc-floating-label')
+  protected mdcLabel!: HTMLElement;
 
   @query(strings.HIDDEN_INPUT_SELECTOR)
   protected _hiddenInput!: HTMLInputElement;
@@ -682,9 +685,16 @@ export class Select extends FormElement {
     };
   }
 
-  protected _setNativeSelectedIndex(index: number) {
-    this._nativeControl!.selectedIndex = index;
-    this._selectedText!.textContent = this.slottedSelect!.options[index].textContent;
+  protected async _setNativeSelectedIndex(index: number) {
+    if (index === -1) {
+      await this.updateComplete;
+      this._selectedText!.textContent = '';
+      this._nativeControl!.value = '';
+      
+      this.mdcLabel.classList.remove("mdc-floating-label--float-above")
+    } else if (this.slottedSelect!.options[index]) {
+        this._selectedText!.textContent = this.slottedSelect!.options[index].textContent;
+    }
   }
 
   protected _setEnhancedSelectedIndex(index: number) {
@@ -705,7 +715,15 @@ export class Select extends FormElement {
     if (this._hiddenInput) {
       this._hiddenInput.value = selectedItem ? selectedItem['value'] || '' : '';
     }
-
+  
+    if (index === -1) {
+      this._selectedItem = null as unknown as MWCListItem;
+      this.value = '';
+    } else {
+        this._selectedItem = selectedItem as MWCListItem;
+        this.value = (selectedItem as MWCListItem).value;
+    }
+    
     this.layout();
   }
 

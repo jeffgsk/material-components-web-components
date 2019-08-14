@@ -59,3 +59,7 @@ limitations under the License.
 // slot[name="menu"]::slotted(*) {
 //   position: relative;
 // }
+
+::slotted(select) {
+  min-height: 100%;
+}
