@@ -29,6 +29,7 @@ import {
 import { closest, matches } from '@material/dom/ponyfill';
 import { MDCListAdapter } from '@material/list/adapter';
 import { MDCListFoundation } from '@material/list/foundation';
+import { MDCListIndex } from '@material/list/types';
 import { cssClasses, strings } from '@material/list/constants';
 import { ListItem as MWCListItem } from './mwc-list-item';
 import { ListDivider as MWCListDivider } from './mwc-list-divider';
@@ -83,14 +84,6 @@ export class List extends BaseElement {
   })
   public horizontal = false;
 
-  @property({ type: Number })
-  @observer(function (this: List, value: number) {
-    if (this.mdcFoundation.getSelectedIndex() !== value) {
-      this.mdcFoundation.setSelectedIndex(value);
-    }
-  })
-  public selectedIndex: number | number[] = -1;
-
   @property({ type: Boolean })
   @observer(function (this: List, value: boolean) {
     this.mdcFoundation.setWrapFocus(value);
@@ -103,6 +96,15 @@ export class List extends BaseElement {
     this.setAttribute('role', value ? 'listbox' : 'list');
   })
   public singleSelection = false;
+
+  get selectedIndex(): MDCListIndex {
+    return this.mdcFoundation.getSelectedIndex();
+  }
+
+  set selectedIndex(value: MDCListIndex) {
+    this.mdcFoundation.setSelectedIndex(value);
+    emit(this, 'action', { index: value }, true);
+  }
 
   public get listElements(): MWCListItem[] {
     return this.slotEl && findAssignedElements(this.slotEl, 'mwc-list-item') as MWCListItem[];
@@ -186,10 +188,7 @@ export class List extends BaseElement {
       },
       isFocusInsideList: () => this.mdcRoot.contains(document.activeElement),
       isRootFocused: () => document.activeElement === this,
-      notifyAction: (index) => {
-        this.selectedIndex = this.mdcFoundation.getSelectedIndex();
-        emit(this, 'action', { index }, true);
-      },
+      notifyAction: (index) => emit(this, 'action', { index }, true),
       removeClassForElementIndex: (index, className) => {
         const element = this.listElements[index];
 
@@ -329,19 +328,21 @@ export class List extends BaseElement {
 
     if (hasCheckboxListItems) {
       const preselectedItems = this.mdcRoot.querySelectorAll(strings.ARIA_CHECKED_CHECKBOX_SELECTOR);
-      this.selectedIndex = [...preselectedItems]
+      this.mdcFoundation.setSelectedIndex(
+        [...preselectedItems]
         .map(
           (listItem: Element) => this.listElements.indexOf(listItem as MWCListItem)
-        );
+        )
+      )
     } else if (singleSelectedListItem) {
       if (singleSelectedListItem.activated) {
         this.mdcFoundation.setUseActivatedClass(true);
       }
 
       this.singleSelection = true;
-      this.selectedIndex = this.listElements.indexOf(singleSelectedListItem);
+      this.mdcFoundation.setSelectedIndex(this.listElements.indexOf(singleSelectedListItem));
     } else if (radioSelectedListItem) {
-      this.selectedIndex = this.listElements.indexOf(radioSelectedListItem);
+      this.mdcFoundation.setSelectedIndex(this.listElements.indexOf(radioSelectedListItem));
     }
   }
 

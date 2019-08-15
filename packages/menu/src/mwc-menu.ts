@@ -69,16 +69,16 @@ export class Menu extends BaseElement {
 
   @property({ type: Boolean })
   @observer(function (this: Menu, value: boolean) {
-    if (this.listEl) {
-      this.listEl.wrapFocus = value;
+    if (this.list) {
+      this.list.wrapFocus = value;
     }
   })
   public wrapFocus = false;
 
   @property({ type: Boolean })
   @observer(function (this: Menu, value: boolean) {
-    if (this.listEl) {
-      this.listEl.singleSelection = value;
+    if (this.list) {
+      this.list.singleSelection = value;
     }
   })
   public singleSelection = false;
@@ -92,11 +92,11 @@ export class Menu extends BaseElement {
    * the items container that are proper list items, and not supplemental / presentational DOM
    * elements.
    */
-  get items(): MWCListItem[] {
-    return this.listEl ? this.listEl.listElements : [];
+  public get items(): MWCListItem[] {
+    return this.list ? this.list.listElements : [];
   }
 
-  protected get listEl() {
+  public get list() {
     return this.slotEl && findAssignedElement(this.slotEl, 'mwc-list') as MWCList;
   }
 
@@ -156,7 +156,7 @@ export class Menu extends BaseElement {
       focusItemAtIndex: (index) => {
         this.items[index].focus();
       },
-      focusListRoot: () => this.listEl.focus()
+      focusListRoot: () => this.list.focus()
     }
   }
 
@@ -178,9 +178,9 @@ export class Menu extends BaseElement {
     this._menuSurface.listen(MDCMenuSurfaceFoundation.strings.OPENED_EVENT, this._handleMenuSurfaceOpened);
     this._menuSurface.listen(MDCMenuSurfaceFoundation.strings.CLOSED_EVENT, this._handleMenuSurfaceClosed);
 
-    if (this.listEl) {
-      this.listEl.addEventListener('keydown', this._handleKeydown);
-      this.listEl.addEventListener(EVENTS.action, this._handleItemAction);
+    if (this.list) {
+      this.list.addEventListener('keydown', this._handleKeydown);
+      this.list.addEventListener(EVENTS.action, this._handleItemAction);
     }
   }
 
