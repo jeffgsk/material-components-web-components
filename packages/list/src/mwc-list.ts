@@ -25,7 +25,7 @@ import {
   PropertyValues,
   observer,
   emit
-} from '@material/mwc-base/form-element';
+} from '@material/mwc-base/base-element';
 import { closest, matches } from '@material/dom/ponyfill';
 import { MDCListAdapter } from '@material/list/adapter';
 import { MDCListFoundation } from '@material/list/foundation';
