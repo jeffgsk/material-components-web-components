@@ -177,7 +177,7 @@ export class List extends BaseElement {
       },
       hasRadioAtIndex: (index) => {
         const listItem = this.listElements[index];
-        return !!listItem.shadowRoot!.querySelector(this.selectors.radio);
+        return !!listItem.querySelector(this.selectors.radio);
       },
       isCheckboxCheckedAtIndex: (index) => {
         const listItem = this.listElements[index];
@@ -333,15 +333,17 @@ export class List extends BaseElement {
    * Initialize selectedIndex value based on pre-selected checkbox list items, single selection or radio.
    */
   protected initializeListType() {
-    const hasCheckboxListItems = this.listElements.filter(item => {
-      return item.querySelector<HTMLInputElement>(this.selectors.checkboxRadio);
-    }).length > 0;
-    const singleSelectedListItem = this.listElements.find(item => item.activated || item.selected);
+    const checkboxListItems = this.listElements.filter(item => 
+      item.querySelector<HTMLInputElement>(this.selectors.checkbox)
+    );
+    const singleSelectedListItem = this.listElements.find(item =>
+      item.activated || item.selected
+    );
     const radioSelectedListItem = this.mdcRoot.querySelector(
       strings.ARIA_CHECKED_RADIO_SELECTOR
     ) as MWCListItem;
 
-    if (hasCheckboxListItems) {
+    if (checkboxListItems.length > 0) {
       const preselectedItems = this.listElements.filter(
         item => item.getAttribute('aria-checked') === 'true'
       );
