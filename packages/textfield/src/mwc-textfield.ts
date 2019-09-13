@@ -113,7 +113,13 @@ export class TextField extends FormElement {
 
   @property({ type: String, reflect: true })
   @observer(function(this: TextField, value: string) {
-    this.mdcFoundation && this.mdcFoundation.setValue(value);
+    if (this.mdcFoundation) {
+      this.mdcFoundation.setValue(value);
+
+      if (value !== this.mdcFoundation.getValue() && !this._isFocus) {
+        this._notifyChange();
+      }
+    }
   })
   public value = '';
 
@@ -286,9 +292,13 @@ export class TextField extends FormElement {
 
   protected _trailingIcon!: MDCTextFieldIcon | null;
 
+  protected _isFocus!: Boolean;
+
   protected _handleInput = this._onInput.bind(this) as EventListenerOrEventListenerObject;
 
   protected _handleBlur = this._onBlur.bind(this) as EventListenerOrEventListenerObject;
+
+  protected _handleFocus = this._onFocus.bind(this) as EventListenerOrEventListenerObject;
 
   protected mdcFoundation!: MDCTextFieldFoundation;
 
@@ -600,6 +610,13 @@ export class TextField extends FormElement {
   }
 
   /**
+   * Notifies change event
+   */
+  protected _notifyChange() {
+    emit(this, 'change', { value: this.value }, true);
+  }
+
+  /**
    * Handle input event
    */
   protected _onInput() {
@@ -610,7 +627,15 @@ export class TextField extends FormElement {
   /**
    * Handle blur event
    */
+  protected _onFocus() {
+    this._isFocus = true;
+  }
+
+  /**
+   * Handle blur event
+   */
   protected _onBlur() {
+    this._isFocus = false;
     this._setValidity(this.valid);
   }
 
