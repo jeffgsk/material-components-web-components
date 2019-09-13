@@ -181,7 +181,7 @@ export class Select extends FormElement {
   }
 
   public get value() {
-    return this.mdcFoundation.getValue();
+    return this.mdcFoundation && this.mdcFoundation.getValue();
   }
 
   public set value(value) {
@@ -698,7 +698,9 @@ export class Select extends FormElement {
     const selectedItem = this.slottedMenu!.items[this.selectedIndex as number];
     this._setTextContent(selectedItem.textContent!.trim());
 
-    this.mdcFoundation.handleChange(true);
+    if (this._isMenuOpen) {
+      this.mdcFoundation.handleChange(true);
+    }
   }
 
   /**
