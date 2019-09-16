@@ -111,6 +111,16 @@ export class TextField extends FormElement {
   @queryAll(strings.ICON_SELECTOR)
   protected iconElements!: HTMLElement[];
 
+  @property({ type: String, reflect: true })
+  @observer(function(this: TextField, value: string) {
+    if (this.mdcFoundation && !this._isFocus) {
+      this._notifyChange();
+    }
+
+    this.mdcFoundation && this.mdcFoundation.setValue(value);
+  })
+  public value = '';
+
   @property({ type: Boolean, reflect: true })
   @observer(function(this: TextField, value: boolean) {
     this.mdcFoundation && this.mdcFoundation.setDisabled(value);
@@ -242,16 +252,6 @@ export class TextField extends FormElement {
 
   @property({ type: Boolean })
   public floatLabel = false;
-
-  @property({ type: String, reflect: true })
-  @observer(function(this: TextField, value: string) {
-    if (this.mdcFoundation && !this._isFocus) {
-      this._notifyChange();
-    }
-
-    this.mdcFoundation && this.mdcFoundation.setValue(value);
-  })
-  public value = '';
 
   public get valid(): boolean {
     return this.mdcFoundation && this.mdcFoundation.isValid();
