@@ -243,6 +243,16 @@ export class TextField extends FormElement {
   @property({ type: Boolean })
   public floatLabel = false;
 
+  @property({ type: String, reflect: true })
+  @observer(function(this: TextField, value: string) {
+    if (this.mdcFoundation && !this._isFocus) {
+      this._notifyChange();
+    }
+
+    this.mdcFoundation && this.mdcFoundation.setValue(value);
+  })
+  public value = '';
+
   public get valid(): boolean {
     return this.mdcFoundation && this.mdcFoundation.isValid();
   }
@@ -251,20 +261,6 @@ export class TextField extends FormElement {
     this.mdcFoundation && this.mdcFoundation.setValid(valid);
 
     this._setValidity(valid);
-  }
-
-  public get value(): string {
-    return this.mdcFoundation && this.mdcFoundation.getValue() || '';
-  }
-
-  public set value(value: string) {
-    if (this.mdcFoundation && value !== this.mdcFoundation.getValue()) {
-      this.mdcFoundation.setValue(value);
-
-      if (!this._isFocus) {
-        this._notifyChange();
-      }
-    }
   }
 
   public get ripple(): RippleSurface | undefined {
@@ -594,6 +590,7 @@ export class TextField extends FormElement {
     super.firstUpdated();
 
     this.formElement.addEventListener('input', this._handleInput);
+    this.formElement.addEventListener('focus', this._handleFocus);
     this.formElement.addEventListener('blur', this._handleBlur);
 
     if (this._trailingIcon) {
