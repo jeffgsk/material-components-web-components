@@ -145,6 +145,9 @@ export class Slider extends FormElement {
   })
   markers = false;
 
+  /**
+   * Optional. Default value is 0. Use to set up the number of markers on a discrete slider
+   */
   @property({ type: Number })
   protected _numMarkers = 0;
 
