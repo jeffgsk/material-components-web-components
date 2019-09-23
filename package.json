@@ -16,6 +16,8 @@
     "build:typescript": "tsc --build packages/**/tsconfig.json",
     "rescope:authentic": "./scripts/rescope-authentic.sh",
     "rescope:material": "./scripts/rescope-material.sh",
+    "rescope:gsk": "./scripts/rescope-gsk.sh",
+    "publish-modules-ci": "lerna publish patch --yes --force-publish",
     "publish": "./scripts/publish-npm.sh",
     "restart": "npm run clean && npm run bootstrap",
     "update-gh-pages": "npm run bootstrap && ./scripts/publish-demos.sh",
