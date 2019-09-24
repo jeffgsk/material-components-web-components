@@ -23,20 +23,20 @@ import {
   customElement,
   HTMLElementWithRipple,
   addHasRemoveClass
-} from '@material/mwc-base/form-element';
+} from '@gsk-platforms/mwc-base/form-element';
 import MDCSwitchFoundation from '@material/switch/foundation';
 import { MDCSwitchAdapter } from '@material/switch/adapter';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
 
 import { style } from './mwc-switch-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-switch': Switch;
+    'gsk-mwc-switch': Switch;
   }
 }
 
-@customElement('mwc-switch' as any)
+@customElement('gsk-mwc-switch' as any)
 export class Switch extends FormElement {
 
   @query('.mdc-switch')

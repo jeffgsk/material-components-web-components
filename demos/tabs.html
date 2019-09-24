@@ -21,10 +21,10 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.prototype.entries%2CArray.prototype.find%2CArray.prototype.findIndex%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.forEach%2CArray.prototype.reduce%2CArray.prototype.map%2CCustomEvent%2CArray.prototype.every%2CArray.isArray%2CArray.of%2CElement%2CElement.prototype.matches%2CEvent%2CMutationObserver%2CPromise%2CPromise.prototype.finally%2CString.prototype.includes%2CString.prototype.startsWith%2CString.prototype.trim%2Cconsole.error%2Cconsole.log%2Cconsole.info%2Cconsole.warn%2Cconsole.trace%2Cfetch%2CElement.prototype.classList%2CElement.prototype.append%2CElement.prototype.prepend%2CElement.prototype.remove%2CElement.prototype.toggleAttribute%2CElement.prototype.replaceWith%2CElement.prototype.closest%2CElement.prototype.cloneNode%2CElement.prototype.before%2CElement.prototype.after%2CElement.prototype.placeholder%2CElement.prototype.dataset%2CJSON%2CNode.prototype.contains%2CNodeList.prototype.forEach%2CNumber.isInteger%2CNumber.isNaN%2CObject.assign%2CObject.entries%2CObject.freeze%2CObject.values%2CObject.keys"></script>
   <script  src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-icon-button/mwc-icon-button.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-tab/mwc-tab.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-tab-bar/mwc-tab-bar.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-icon/mwc-icon.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-icon-button/mwc-icon-button.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-tab/mwc-tab.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-tab-bar/mwc-tab-bar.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-icon/mwc-icon.js"></script>
   <link rel="stylesheet" href="demo-component.css">
   <style>
     iframe {
@@ -36,108 +36,108 @@ limitations under the License.
 </head>
 <body class="unresolved">
   <header>
-    <a href="index.html"><mwc-icon-button icon="arrow_back"></mwc-icon-button></a>
+    <a href="index.html"><gsk-mwc-icon-button icon="arrow_back"></gsk-mwc-icon-button></a>
     <span>Tabs</span>
   </header>
 
   <div class='main'>
 
-    <mwc-tab-bar>
-      <mwc-tab label="one"></mwc-tab>
-      <mwc-tab label="two"></mwc-tab>
-      <mwc-tab label="three"></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar>
+      <gsk-mwc-tab label="one"></gsk-mwc-tab>
+      <gsk-mwc-tab label="two"></gsk-mwc-tab>
+      <gsk-mwc-tab label="three"></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>Fading indicator</h3>
-    <mwc-tab-bar>
-      <mwc-tab label="one" isFadingIndicator></mwc-tab>
-      <mwc-tab label="two" isFadingIndicator></mwc-tab>
-      <mwc-tab label="three" isFadingIndicator></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar>
+      <gsk-mwc-tab label="one" isFadingIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="two" isFadingIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="three" isFadingIndicator></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>Min Width Tab</h3>
-    <mwc-tab-bar>
-      <mwc-tab label="one" minWidth></mwc-tab>
-      <mwc-tab label="two" minWidth></mwc-tab>
-      <mwc-tab label="three" minWidth></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar>
+      <gsk-mwc-tab label="one" minWidth></gsk-mwc-tab>
+      <gsk-mwc-tab label="two" minWidth></gsk-mwc-tab>
+      <gsk-mwc-tab label="three" minWidth></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>Min Width Indicator</h3>
-    <mwc-tab-bar>
-      <mwc-tab label="one" isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="two" isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="three" isMinWidthIndicator></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar>
+      <gsk-mwc-tab label="one" isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="two" isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="three" isMinWidthIndicator></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>Min Width Tab - Min Width Indicator</h3>
-    <mwc-tab-bar>
-      <mwc-tab label="one" minWidth isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="two" minWidth isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="three" minWidth isMinWidthIndicator></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar>
+      <gsk-mwc-tab label="one" minWidth isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="two" minWidth isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="three" minWidth isMinWidthIndicator></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>With Icons</h3>
-    <mwc-tab-bar activeIndex="2">
-      <mwc-tab label="one" icon="accessibility"></mwc-tab>
-      <mwc-tab label="two" icon="exit_to_app"></mwc-tab>
-      <mwc-tab label="three" icon="camera"></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar activeIndex="2">
+      <gsk-mwc-tab label="one" icon="accessibility"></gsk-mwc-tab>
+      <gsk-mwc-tab label="two" icon="exit_to_app"></gsk-mwc-tab>
+      <gsk-mwc-tab label="three" icon="camera"></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>Only Icons</h3>
-    <mwc-tab-bar activeIndex="2">
-      <mwc-tab icon="accessibility"></mwc-tab>
-      <mwc-tab icon="exit_to_app"></mwc-tab>
-      <mwc-tab icon="camera"></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar activeIndex="2">
+      <gsk-mwc-tab icon="accessibility"></gsk-mwc-tab>
+      <gsk-mwc-tab icon="exit_to_app"></gsk-mwc-tab>
+      <gsk-mwc-tab icon="camera"></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>With Icons - Stacked</h3>
-    <mwc-tab-bar activeIndex="1">
-      <mwc-tab label="one" icon="accessibility" stacked></mwc-tab>
-      <mwc-tab label="two" icon="exit_to_app" stacked></mwc-tab>
-      <mwc-tab label="three" icon="camera" stacked></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar activeIndex="1">
+      <gsk-mwc-tab label="one" icon="accessibility" stacked></gsk-mwc-tab>
+      <gsk-mwc-tab label="two" icon="exit_to_app" stacked></gsk-mwc-tab>
+      <gsk-mwc-tab label="three" icon="camera" stacked></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>With Icons - Stacked - Min Width Indicator</h3>
-    <mwc-tab-bar>
-      <mwc-tab label="one" icon="accessibility" stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="two" icon="exit_to_app" stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="three" icon="camera" stacked isMinWidthIndicator></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar>
+      <gsk-mwc-tab label="one" icon="accessibility" stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="two" icon="exit_to_app" stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="three" icon="camera" stacked isMinWidthIndicator></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>Scrolling</h3>
-    <mwc-tab-bar>
-      <mwc-tab label="one"></mwc-tab>
-      <mwc-tab label="two"></mwc-tab>
-      <mwc-tab label="three"></mwc-tab>
-      <mwc-tab label="four"></mwc-tab>
-      <mwc-tab label="five"></mwc-tab>
-      <mwc-tab label="six"></mwc-tab>
-      <mwc-tab label="seven"></mwc-tab>
-      <mwc-tab label="eight"></mwc-tab>
-      <mwc-tab label="nine"></mwc-tab>
-      <mwc-tab label="ten"></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar>
+      <gsk-mwc-tab label="one"></gsk-mwc-tab>
+      <gsk-mwc-tab label="two"></gsk-mwc-tab>
+      <gsk-mwc-tab label="three"></gsk-mwc-tab>
+      <gsk-mwc-tab label="four"></gsk-mwc-tab>
+      <gsk-mwc-tab label="five"></gsk-mwc-tab>
+      <gsk-mwc-tab label="six"></gsk-mwc-tab>
+      <gsk-mwc-tab label="seven"></gsk-mwc-tab>
+      <gsk-mwc-tab label="eight"></gsk-mwc-tab>
+      <gsk-mwc-tab label="nine"></gsk-mwc-tab>
+      <gsk-mwc-tab label="ten"></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>Scrolling - Width Icons - Stacked - Min Width Indicator</h3>
-    <mwc-tab-bar>
-      <mwc-tab label="one" icon="camera" stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="two" icon="camera" stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="three" icon="camera" stacked isMinWidthIndicator ></mwc-tab>
-      <mwc-tab label="four" icon="camera" stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="five" icon="camera" stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="six" icon="camera" stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="seven" icon="camera" stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="eight" icon="camera" stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="nine" icon="camera"  stacked isMinWidthIndicator></mwc-tab>
-      <mwc-tab label="ten" icon="camera" stacked isMinWidthIndicator></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar>
+      <gsk-mwc-tab label="one" icon="camera" stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="two" icon="camera" stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="three" icon="camera" stacked isMinWidthIndicator ></gsk-mwc-tab>
+      <gsk-mwc-tab label="four" icon="camera" stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="five" icon="camera" stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="six" icon="camera" stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="seven" icon="camera" stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="eight" icon="camera" stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="nine" icon="camera"  stacked isMinWidthIndicator></gsk-mwc-tab>
+      <gsk-mwc-tab label="ten" icon="camera" stacked isMinWidthIndicator></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>Icon indicator</h3>
-    <mwc-tab-bar>
-      <mwc-tab icon="camera" isFadingIndicator indicatorIcon="donut_large"></mwc-tab>
-      <mwc-tab icon="accessibility" isFadingIndicator indicatorIcon="donut_large"></mwc-tab>
-      <mwc-tab icon="exit_to_app" isFadingIndicator indicatorIcon="donut_large"></mwc-tab>
-    </mwc-tab-bar>
+    <gsk-mwc-tab-bar>
+      <gsk-mwc-tab icon="camera" isFadingIndicator indicatorIcon="donut_large"></gsk-mwc-tab>
+      <gsk-mwc-tab icon="accessibility" isFadingIndicator indicatorIcon="donut_large"></gsk-mwc-tab>
+      <gsk-mwc-tab icon="exit_to_app" isFadingIndicator indicatorIcon="donut_large"></gsk-mwc-tab>
+    </gsk-mwc-tab-bar>
 
     <h3>RTL</h3>
     <iframe src="tabs/rtl.html"></iframe>

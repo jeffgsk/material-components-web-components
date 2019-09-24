@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 import { directive, PropertyPart, noChange, NodePart, templateFactory } from 'lit-html';
-import { SpecificEventListener } from '@material/mwc-base/base-element';
+import { SpecificEventListener } from '@gsk-platforms/mwc-base/base-element';
 import MDCRippleFoundation from '@material/ripple/foundation';
 import { MDCRippleAdapter } from '@material/ripple/adapter';
 import * as util from '@material/ripple/util';

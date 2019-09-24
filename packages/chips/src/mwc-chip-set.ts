@@ -23,15 +23,15 @@ import {
   query,
   queryAll,
   addHasRemoveClass
-} from '@material/mwc-base/base-element';
-import { findAssignedElements } from '@material/mwc-base/utils';
+} from '@gsk-platforms/mwc-base/base-element';
+import { findAssignedElements } from '@gsk-platforms/mwc-base/utils';
 import { MDCChipSetFoundation } from '@material/chips/chip-set/foundation';
 import { MDCChipSetAdapter } from '@material/chips/chip-set/adapter';
 import { Chip as MWCChip, EVENTS as CHIP_EVENTS } from './mwc-chip';
 
 import { style } from './mwc-chip-set-css';
 
-@customElement('mwc-chip-set' as any)
+@customElement('gsk-mwc-chip-set' as any)
 export class ChipSet extends BaseElement {
 
   /**
@@ -82,7 +82,7 @@ export class ChipSet extends BaseElement {
 
   protected get slottedChips(): MWCChip[] {
     return this.slotEl
-      ? findAssignedElements(this.slotEl, 'mwc-chip') as MWCChip[]
+      ? findAssignedElements(this.slotEl, 'gsk-mwc-chip') as MWCChip[]
       : [];
   }
 

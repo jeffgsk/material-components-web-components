@@ -16,16 +16,37 @@
 #  limitations under the License.
 #
 
-set -e
+#set -e
+#
+#`npm bin`/lerna bootstrap
+#`npm bin`/lerna clean --yes
+#
+#packages=(`find packages -name "package.json" -maxdepth 2 | xargs -I '{}' dirname '{}'`)
+#
+#for package in ${packages[@]}; do
+#  npmname=`node -e "console.log(require(\"${INIT_CWD}/${package}/package.json\").name)"`
+#  if [ ! -L ${INIT_CWD}/node_modules/${npmname} ]; then
+#    ln -sfv ${INIT_CWD}/${package} ${INIT_CWD}/node_modules/${npmname}
+#  fi
+#done
 
+set -e
+lerna exec npm install
 `npm bin`/lerna bootstrap
 `npm bin`/lerna clean --yes
 
+mkdir -p ${INIT_CWD}/node_modules/@gsk-platforms
 packages=(`find packages -name "package.json" -maxdepth 2 | xargs -I '{}' dirname '{}'`)
 
 for package in ${packages[@]}; do
+  echo ${package}
+  echo "${INIT_CWD}/${package}/package.json"
   npmname=`node -e "console.log(require(\"${INIT_CWD}/${package}/package.json\").name)"`
+  echo ${npmname}
   if [ ! -L ${INIT_CWD}/node_modules/${npmname} ]; then
-    ln -sfv ${INIT_CWD}/${package} ${INIT_CWD}/node_modules/${npmname}
+    ln -sfv "${INIT_CWD}/${package}" "${INIT_CWD}/node_modules/${npmname}"
   fi
 done
+
+npm run build:styling
+npx lerna run build

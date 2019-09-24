@@ -27,7 +27,7 @@ import {
   classMap,
   findAssignedElement,
   emit
-} from '@material/mwc-base/form-element';
+} from '@gsk-platforms/mwc-base/form-element';
 import { MDCSelectAdapter } from '@material/select/adapter';
 import { MDCSelectFoundation } from '@material/select/foundation';
 import { MDCSelectFoundationMap } from '@material/select/types';
@@ -38,9 +38,9 @@ import { MDCNotchedOutline, MDCNotchedOutlineFactory } from '@material/notched-o
 import { MDCFloatingLabel, MDCFloatingLabelFactory } from '@material/floating-label';
 import { MDCLineRipple, MDCLineRippleFactory } from '@material/line-ripple';
 import * as menuSurfaceConstants from '@material/menu-surface/constants';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
-import { Menu as MWCMenu, EVENTS as MENU_EVENTS } from '@material/mwc-menu/mwc-menu';
-import { ListItem as MWCListItem } from '@material/mwc-list/mwc-list-item';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
+import { Menu as MWCMenu, EVENTS as MENU_EVENTS } from '@gsk-platforms/mwc-menu/mwc-menu';
+import { ListItem as MWCListItem } from '@gsk-platforms/mwc-list/mwc-list-item';
 import { MDCListIndex } from '@material/list/types';
 
 import { style } from './mwc-select-css';
@@ -58,11 +58,11 @@ const VALIDATION_ATTR_WHITELIST = [ 'required', 'aria-required' ];
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-select': Select;
+    'gsk-mwc-select': Select;
   }
 }
 
-@customElement('mwc-select' as any)
+@customElement('gsk-mwc-select' as any)
 export class Select extends FormElement {
   @query('.mdc-select')
   protected mdcRoot!: HTMLElementWithRipple;
@@ -213,7 +213,7 @@ export class Select extends FormElement {
   }
 
   public get slottedMenu(): MWCMenu | null {
-    return this.slotEl && findAssignedElement(this.slotEl, 'mwc-menu') as MWCMenu;
+    return this.slotEl && findAssignedElement(this.slotEl, 'gsk-mwc-menu') as MWCMenu;
   }
 
   protected get formElement(): HTMLElement {

@@ -23,8 +23,8 @@ import {
   observer,
   HTMLElementWithRipple,
   addHasRemoveClass
-} from '@material/mwc-base/form-element';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
+} from '@gsk-platforms/mwc-base/form-element';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
 import MDCRadioFoundation from '@material/radio/foundation';
 import { MDCRadioAdapter } from '@material/radio/adapter';
 import { SelectionController } from './selection-controller';
@@ -33,11 +33,11 @@ import { style } from './mwc-radio-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-radio': Radio;
+    'gsk-mwc-radio': Radio;
   }
 }
 
-@customElement('mwc-radio' as any)
+@customElement('gsk-mwc-radio' as any)
 export class Radio extends FormElement {
 
   /**

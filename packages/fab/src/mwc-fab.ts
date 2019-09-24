@@ -20,20 +20,20 @@ import {
   property,
   customElement,
   classMap
-} from '@material/mwc-base/base-element';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
+} from '@gsk-platforms/mwc-base/base-element';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
 
 import { style } from './mwc-fab-css';
 
-import '@material/mwc-icon/mwc-icon-font';
+import '@gsk-platforms/mwc-icon/mwc-icon-font';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-fab': Fab;
+    'gsk-mwc-fab': Fab;
   }
 }
 
-@customElement('mwc-fab' as any)
+@customElement('gsk-mwc-fab' as any)
 export class Fab extends LitElement {
 
   /**

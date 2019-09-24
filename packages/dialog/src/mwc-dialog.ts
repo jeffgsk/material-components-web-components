@@ -8,12 +8,12 @@ import {
   classMap,
   observer,
   TemplateResult
-} from '@material/mwc-base/base-element'
-import { emit, findAssignedElements, addHasRemoveClass } from '@material/mwc-base/utils'
+} from '@gsk-platforms/mwc-base/base-element'
+import { emit, findAssignedElements, addHasRemoveClass } from '@gsk-platforms/mwc-base/utils'
 import { MDCDialogFoundation } from '@material/dialog/foundation'
 import { MDCDialogAdapter } from '@material/dialog/adapter'
-import { Button as MWCButton } from '@material/mwc-button'
-import { ripple } from '@material/mwc-ripple/ripple-directive'
+import { Button as MWCButton } from '@gsk-platforms/mwc-button'
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive'
 import { closest, matches } from '@material/dom/ponyfill'
 import { strings } from '@material/dialog/constants'
 import { styleMap } from 'lit-html/directives/style-map'
@@ -39,7 +39,7 @@ export const EVENTS = {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-dialog': Dialog;
+    'gsk-mwc-dialog': Dialog;
   }
 
   interface Document {
@@ -50,7 +50,7 @@ declare global {
   }
 }
 
-@customElement('mwc-dialog' as any)
+@customElement('gsk-mwc-dialog' as any)
 export class Dialog extends BaseElement {
   @query('.mdc-dialog')
   protected mdcRoot!: HTMLElement;

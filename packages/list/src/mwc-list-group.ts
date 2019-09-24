@@ -21,18 +21,18 @@ import {
   html,
   classMap,
   findAssignedElements
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import { List as MWCList } from './mwc-list';
 
 import { style } from './mwc-list-group-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-list-group': ListGroup;
+    'gsk-mwc-list-group': ListGroup;
   }
 }
 
-@customElement('mwc-list-group' as any)
+@customElement('gsk-mwc-list-group' as any)
 export class ListGroup extends LitElement {
 
   @query('.mdc-list-group')
@@ -42,7 +42,7 @@ export class ListGroup extends LitElement {
   protected slotEl!: HTMLSlotElement;
 
   protected get listElements(): MWCList[] {
-    return this.slotEl && findAssignedElements(this.slotEl, 'mwc-list') as MWCList[];
+    return this.slotEl && findAssignedElements(this.slotEl, 'gsk-mwc-list') as MWCList[];
   }
 
   static styles = style;

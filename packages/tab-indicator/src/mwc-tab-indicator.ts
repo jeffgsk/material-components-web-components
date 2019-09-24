@@ -23,7 +23,7 @@ import {
   PropertyValues,
   classMap,
   addHasRemoveClass
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import MDCTabIndicatorFoundation from '@material/tab-indicator/foundation';
 import MDCSlidingTabIndicatorFoundation from '@material/tab-indicator/sliding-foundation';
 import MDCFadingTabIndicatorFoundation from '@material/tab-indicator/fading-foundation';
@@ -33,11 +33,11 @@ import { style } from './mwc-tab-indicator-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-tab-indicator': TabIndicator;
+    'gsk-mwc-tab-indicator': TabIndicator;
   }
 }
 
-@customElement('mwc-tab-indicator' as any)
+@customElement('gsk-mwc-tab-indicator' as any)
 export class TabIndicator extends BaseElement {
 
   protected mdcFoundation!: MDCTabIndicatorFoundation;

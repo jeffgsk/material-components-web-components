@@ -24,19 +24,19 @@ import {
 } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map';
 import { unsafeHTML } from 'lit-html/directives/unsafe-html';
-import { findAssignedElement, emit } from '@material/mwc-base/utils';
-import { observer } from '@material/mwc-base/observer';
+import { findAssignedElement, emit } from '@gsk-platforms/mwc-base/utils';
+import { observer } from '@gsk-platforms/mwc-base/observer';
 
 import { style } from './mwc-table-css';
 
 // elements to be registered ahead of time
-import '@material/mwc-circular-progress';
-import '@material/mwc-icon/mwc-icon-font';
-import '@material/mwc-tooltip';
+import '@gsk-platforms/mwc-circular-progress';
+import '@gsk-platforms/mwc-icon/mwc-icon-font';
+import '@gsk-platforms/mwc-tooltip';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-table': Table;
+    'gsk-mwc-table': Table;
   }
 }
 
@@ -64,7 +64,7 @@ export interface ITableElements {
   columnsCount: number
 }
 
-@customElement('mwc-table')
+@customElement('gsk-mwc-table')
 export class Table extends LitElement {
 
   @query('.mwc-table')
@@ -73,7 +73,7 @@ export class Table extends LitElement {
   @query('slot[name=""]')
   protected slotEl!: HTMLSlotElement;
 
-  @query('mwc-circular-progress')
+  @query('gsk-mwc-circular-progress')
   protected progressEl!: HTMLElement;
 
   @property({ type: Number })
@@ -133,7 +133,7 @@ export class Table extends LitElement {
 
   render() {
     const classes = {
-      'mwc-table': true
+      'gsk-mwc-table': true
     };
 
     return html`

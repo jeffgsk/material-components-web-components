@@ -14,7 +14,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-import { FormElement, html, BaseElement, property, query, observer, classMap, findAssignedElement } from '@material/mwc-base/form-element';
+import { FormElement, html, BaseElement, property, query, observer, classMap, findAssignedElement } from '@gsk-platforms/mwc-base/form-element';
 import MDCFormFieldFoundation from '@material/form-field/foundation';
 import { MDCFormFieldAdapter } from '@material/form-field/adapter';
 
@@ -22,7 +22,7 @@ import { style } from './mwc-formfield-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-formfield': Formfield;
+    'gsk-mwc-formfield': Formfield;
   }
 }
 
@@ -123,4 +123,4 @@ export class Formfield extends BaseElement {
   }
 }
 
-customElements.define('mwc-formfield', Formfield);
+customElements.define('gsk-mwc-formfield', Formfield);

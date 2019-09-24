@@ -24,15 +24,15 @@ import {
   observer,
   emit,
   addHasRemoveClass
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import { MDCChipFoundation } from '@material/chips/chip/foundation';
 import { MDCChipAdapter } from '@material/chips/chip/adapter';
 import { ChipSet as MWCChipSet } from './mwc-chip-set';
 import { styleMap } from 'lit-html/directives/style-map';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
 import { style } from './mwc-chip-css';
 
-import "@material/mwc-icon/mwc-icon-font";
+import "@gsk-platforms/mwc-icon/mwc-icon-font";
 
 const INTERACTION_EVENTS = [ 'click', 'keydown' ];
 const IMAGE_FORMATS_REGEX = new RegExp(/(http(s?):\/\/)|(.(gif|jp(e?)g|png|svg))$/);
@@ -45,7 +45,7 @@ export const EVENTS = {
   trailingIconInteraction: 'trailingiconinteraction'
 }
 
-@customElement('mwc-chip' as any)
+@customElement('gsk-mwc-chip' as any)
 export class Chip extends BaseElement {
 
   /**

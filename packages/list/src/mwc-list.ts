@@ -25,7 +25,7 @@ import {
   PropertyValues,
   observer,
   emit
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import { closest, matches } from '@material/dom/ponyfill';
 import { MDCListAdapter } from '@material/list/adapter';
 import { MDCListFoundation } from '@material/list/foundation';
@@ -38,11 +38,11 @@ import { style } from './mwc-list-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-list': List;
+    'gsk-mwc-list': List;
   }
 }
 
-@customElement('mwc-list' as any)
+@customElement('gsk-mwc-list' as any)
 export class List extends BaseElement {
 
   @query('.mdc-list')
@@ -106,20 +106,20 @@ export class List extends BaseElement {
   }
 
   public get listElements(): MWCListItem[] {
-    return this.slotEl && findAssignedElements(this.slotEl, 'mwc-list-item') as MWCListItem[];
+    return this.slotEl && findAssignedElements(this.slotEl, 'gsk-mwc-list-item') as MWCListItem[];
   }
 
   protected get listDividers(): MWCListDivider[] {
-    return this.slotEl && findAssignedElements(this.slotEl, 'mwc-list-divider') as MWCListDivider[];
+    return this.slotEl && findAssignedElements(this.slotEl, 'gsk-mwc-list-divider') as MWCListDivider[];
   }
 
   protected get selectors() {
     return {
-      checkbox: 'mwc-checkbox',
-      radio: 'mwc-radio',
-      checkboxRadio: 'mwc-checkbox:not([disabled]), mwc-radio:not([disabled])',
-      focusableChildElements: 'mwc-button:not([disabled]), mwc-radio:not([disabled]), mwc-checkbox:not([disabled]), a',
-      childElementsToToggleTabIndex: 'mwc-button:not([disabled]), a'
+      checkbox: 'gsk-mwc-checkbox',
+      radio: 'gsk-mwc-radio',
+      checkboxRadio: 'gsk-mwc-checkbox:not([disabled]), mwc-radio:not([disabled])',
+      focusableChildElements: 'gsk-mwc-button:not([disabled]), mwc-radio:not([disabled]), mwc-checkbox:not([disabled]), a',
+      childElementsToToggleTabIndex: 'gsk-mwc-button:not([disabled]), a'
     }
   }
 

@@ -1,11 +1,11 @@
 {
-  "name": "@material/mwc-menu",
-  "version": "0.6.0",
+  "name": "@gsk-platforms/mwc-menu",
+  "version": "0.8.36",
   "description": "",
   "main": "mwc-menu.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-components/material-components-web-components.git"
+    "url": "https://mygithub.gsk.com/gsk-tech/gsk-material-components-web-components.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,11 +15,11 @@
   "dependencies": {
     "@material/menu": "~2.3.0",
     "@material/menu-surface": "~2.3.0",
-    "@material/mwc-base": "~0.6.0",
-    "@material/mwc-list": "~0.6.0"
+    "@gsk-platforms/mwc-base": "~0.8.36",
+    "@gsk-platforms/mwc-list": "~0.8.36"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   },
   "private": false
 }

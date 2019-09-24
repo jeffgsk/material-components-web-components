@@ -1,11 +1,11 @@
 {
-  "name": "@material/mwc-dialog",
-  "version": "0.6.0",
+  "name": "@gsk-platforms/mwc-dialog",
+  "version": "0.8.36",
   "description": "",
   "main": "mwc-dialog.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-components/material-components-web-components.git"
+    "url": "https://mygithub.gsk.com/gsk-tech/gsk-material-components-web-components.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,12 +16,12 @@
     "@material/button": "~2.3.0",
     "@material/dialog": "~2.3.0",
     "@material/dom": "~1.1.0",
-    "@material/mwc-base": "~0.6.0",
-    "@material/mwc-button": "~0.6.0",
-    "@material/mwc-ripple": "~0.6.0",
+    "@gsk-platforms/mwc-base": "~0.8.36",
+    "@gsk-platforms/mwc-button": "~0.8.36",
+    "@gsk-platforms/mwc-ripple": "~0.8.36",
     "lit-html": "~1.1.1"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   }
 }

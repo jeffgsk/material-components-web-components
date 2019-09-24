@@ -14,20 +14,20 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
-import { LitElement, html, property, customElement, classMap } from '@material/mwc-base/base-element';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
+import { LitElement, html, property, customElement, classMap } from '@gsk-platforms/mwc-base/base-element';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
 
 import { style } from './mwc-button-css';
 
-import '@material/mwc-icon/mwc-icon-font';
+import '@gsk-platforms/mwc-icon/mwc-icon-font';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-button': Button;
+    'gsk-mwc-button': Button;
   }
 }
 
-@customElement('mwc-button' as any)
+@customElement('gsk-mwc-button' as any)
 export class Button extends LitElement {
 
   /**

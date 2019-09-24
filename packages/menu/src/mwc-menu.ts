@@ -25,14 +25,14 @@ import {
   emit,
   findAssignedElement,
   eventPath
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import { MDCMenuFoundation, MDCMenuAdapter, Corner } from '@material/menu';
 import { DefaultFocusState } from '@material/menu/constants';
 import { MDCMenuSurface, MDCMenuSurfaceFactory } from '@material/menu-surface/component';
 import MDCMenuSurfaceFoundation from '@material/menu-surface/foundation';
 import { MDCMenuDistance } from '@material/menu-surface/types';
-import { List as MWCList } from '@material/mwc-list/mwc-list';
-import { ListItem as MWCListItem } from '@material/mwc-list/mwc-list-item';
+import { List as MWCList } from '@gsk-platforms/mwc-list/mwc-list';
+import { ListItem as MWCListItem } from '@gsk-platforms/mwc-list/mwc-list-item';
 
 import { style } from './mwc-menu-css';
 
@@ -43,7 +43,7 @@ export const EVENTS = {
   action: 'action'
 };
 
-@customElement('mwc-menu' as any)
+@customElement('gsk-mwc-menu' as any)
 export class Menu extends BaseElement {
 
   @query('.mdc-menu')
@@ -98,7 +98,7 @@ export class Menu extends BaseElement {
   }
 
   public get list() {
-    return this.slotEl && findAssignedElement(this.slotEl, 'mwc-list') as MWCList;
+    return this.slotEl && findAssignedElement(this.slotEl, 'gsk-mwc-list') as MWCList;
   }
 
   protected _menuSurface!: MDCMenuSurface;

@@ -26,7 +26,7 @@ import {
   classMap,
   property,
   observer
-} from '@material/mwc-base/form-element';
+} from '@gsk-platforms/mwc-base/form-element';
 import { MDCFloatingLabel, MDCFloatingLabelFactory } from '@material/floating-label';
 import { cssClasses as floatingLabelCssClasses } from '@material/floating-label/constants';
 import { MDCLineRipple, MDCLineRippleFactory } from '@material/line-ripple';
@@ -53,8 +53,8 @@ import {
 } from '@material/textfield/helper-text';
 import { MDCTextFieldIcon, MDCTextFieldIconFactory } from '@material/textfield/icon';
 import { MDCTextFieldFoundationMap } from '@material/textfield/types';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
-import { emit } from '@material/mwc-base/utils';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
+import { emit } from '@gsk-platforms/mwc-base/utils';
 
 import { style } from './mwc-textfield-css';
 
@@ -83,11 +83,11 @@ export const EVENTS = {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-textfield': TextField;
+    'gsk-mwc-textfield': TextField;
   }
 }
 
-@customElement('mwc-textfield' as any)
+@customElement('gsk-mwc-textfield' as any)
 export class TextField extends FormElement {
 
   @query('.mdc-text-field')

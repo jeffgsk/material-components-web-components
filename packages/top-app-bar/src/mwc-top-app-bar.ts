@@ -25,7 +25,7 @@ import {
   SpecificEventListener,
   addHasRemoveClass,
   emit
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import MDCTopAppBarBaseFoundation from '@material/top-app-bar/foundation';
 import MDCTopAppBarFoundation from '@material/top-app-bar/standard/foundation';
 import MDCShortTopAppBarFoundation from '@material/top-app-bar/short/foundation';
@@ -37,7 +37,7 @@ import { style } from './mwc-top-app-bar-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-top-app-bar': TopAppBar;
+    'gsk-mwc-top-app-bar': TopAppBar;
   }
 }
 
@@ -45,7 +45,7 @@ export const EVENTS = {
   nav: 'nav'
 };
 
-@customElement('mwc-top-app-bar' as any)
+@customElement('gsk-mwc-top-app-bar' as any)
 export class TopAppBar extends BaseElement {
 
   protected mdcFoundation!: MDCTopAppBarBaseFoundation;
@@ -98,7 +98,7 @@ export class TopAppBar extends BaseElement {
       'mdc-top-app-bar--short-collapsed': this.type === 'shortCollapsed',
       'mdc-top-app-bar--prominent': this.type === 'prominent' || this.type === 'prominentFixed',
       'mdc-top-app-bar--dense': this.dense,
-      'mwc-top-app-bar--center-title': this.centerTitle
+      'gsk-mwc-top-app-bar--center-title': this.centerTitle
     };
     const alignStartTitle = !this.centerTitle ? html`
       <span class="mdc-top-app-bar__title">

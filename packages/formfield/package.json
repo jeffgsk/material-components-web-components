@@ -1,11 +1,11 @@
 {
-  "name": "@material/mwc-formfield",
-  "version": "0.6.0",
+  "name": "@gsk-platforms/mwc-formfield",
+  "version": "0.8.36",
   "description": "",
   "main": "mwc-formfield.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-components/material-components-web-components.git"
+    "url": "https://mygithub.gsk.com/gsk-tech/gsk-material-components-web-components.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,9 +14,9 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@material/form-field": "~2.3.0",
-    "@material/mwc-base": "~0.6.0"
+    "@gsk-platforms/mwc-base": "~0.8.36"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   }
 }

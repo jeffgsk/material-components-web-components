@@ -22,14 +22,14 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.prototype.entries%2CArray.prototype.find%2CArray.prototype.findIndex%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.forEach%2CArray.prototype.reduce%2CArray.prototype.map%2CCustomEvent%2CArray.prototype.every%2CArray.isArray%2CArray.of%2CElement%2CElement.prototype.matches%2CEvent%2CMutationObserver%2CPromise%2CPromise.prototype.finally%2CString.prototype.includes%2CString.prototype.startsWith%2CString.prototype.trim%2Cconsole.error%2Cconsole.log%2Cconsole.info%2Cconsole.warn%2Cconsole.trace%2Cfetch%2CElement.prototype.classList%2CElement.prototype.append%2CElement.prototype.prepend%2CElement.prototype.remove%2CElement.prototype.toggleAttribute%2CElement.prototype.replaceWith%2CElement.prototype.closest%2CElement.prototype.cloneNode%2CElement.prototype.before%2CElement.prototype.after%2CElement.prototype.placeholder%2CElement.prototype.dataset%2CJSON%2CNode.prototype.contains%2CNodeList.prototype.forEach%2CNumber.isInteger%2CNumber.isNaN%2CObject.assign%2CObject.entries%2CObject.freeze%2CObject.values%2CObject.keys"></script>
   <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-icon-button/mwc-icon-button.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-select/mwc-select.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-menu/mwc-menu.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-list/mwc-list.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-list/mwc-list-item.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-list/mwc-list-divider.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-icon/mwc-icon.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-checkbox/mwc-checkbox.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-icon-button/mwc-icon-button.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-select/mwc-select.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-menu/mwc-menu.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-list/mwc-list.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-list/mwc-list-item.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-list/mwc-list-divider.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-icon/mwc-icon.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-checkbox/mwc-checkbox.js"></script>
   <link rel="stylesheet" href="demo-component.css">
 
   <style>
@@ -42,7 +42,7 @@ limitations under the License.
 <body class="unresolved">
   <header>
     <a href="index.html">
-        <a href="index.html"><mwc-icon-button icon="arrow_back"></mwc-icon-button></a>
+        <a href="index.html"><gsk-mwc-icon-button icon="arrow_back"></gsk-mwc-icon-button></a>
         <span>Select</span>
     </a>
   </header>
@@ -52,7 +52,7 @@ limitations under the License.
     <div class="demo-group">
       <div>
         <h3>box</h3>
-        <mwc-select leadingIconContent="event" label="Choose an item" placeholder="Placeholder">
+        <gsk-mwc-select leadingIconContent="event" label="Choose an item" placeholder="Placeholder">
           <select>
             <option value="" disabled selected></option>
             <option value="grains">
@@ -65,29 +65,29 @@ limitations under the License.
               Fruit
             </option>
           </select>
-        </mwc-select>
+        </gsk-mwc-select>
       </div>
 
       <div>
         <h3>box enhanced</h3>
-        <mwc-select leadingIconContent="event" label="Choose an item" placeholder="Placeholder">
-          <mwc-menu>
-            <mwc-list>
-              <mwc-list-item value="one">this is choice one</mwc-list-item>
-              <mwc-list-item value="two">this is choice two</mwc-list-item>
-              <mwc-list-item value="three">this is choice three</mwc-list-item>
-              <mwc-list-item disabled value="four">this is choice four</mwc-list-item>
-              <mwc-list-divider></mwc-list-divider>
-              <mwc-list-item value="aaa">this is choice aaa</mwc-list-item>
-              <mwc-list-item value="bbb">this is choice bbb</mwc-list-item>
-            </mwc-list>
-          </mwc-menu>
-        </mwc-select>
+        <gsk-mwc-select leadingIconContent="event" label="Choose an item" placeholder="Placeholder">
+          <gsk-mwc-menu>
+            <gsk-mwc-list>
+              <gsk-mwc-list-item value="one">this is choice one</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="two">this is choice two</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="three">this is choice three</gsk-mwc-list-item>
+              <gsk-mwc-list-item disabled value="four">this is choice four</gsk-mwc-list-item>
+              <gsk-mwc-list-divider></gsk-mwc-list-divider>
+              <gsk-mwc-list-item value="aaa">this is choice aaa</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="bbb">this is choice bbb</gsk-mwc-list-item>
+            </gsk-mwc-list>
+          </gsk-mwc-menu>
+        </gsk-mwc-select>
       </div>
 
       <div>
         <h3>box required</h3>
-        <mwc-select box required leadingIconContent="event" label="Choose an item" placeholder="Placeholder">
+        <gsk-mwc-select box required leadingIconContent="event" label="Choose an item" placeholder="Placeholder">
           <select>
             <option value="" disabled selected></option>
             <option value="grains">
@@ -100,27 +100,27 @@ limitations under the License.
               Fruit
             </option>
           </select>
-        </mwc-select>
+        </gsk-mwc-select>
       </div>
 
       <div>
         <h3>box disabled</h3>
 
-        <mwc-select leadingIconContent="event" box disabled label="Disabled..." placeholder="Placeholder">
-          <mwc-menu>
-            <mwc-list>
-              <mwc-list-item value="one">this is choice one</mwc-list-item>
-              <mwc-list-item value="two">this is choice two</mwc-list-item>
-            </mwc-list>
-          </mwc-menu>
-        </mwc-select>
+        <gsk-mwc-select leadingIconContent="event" box disabled label="Disabled..." placeholder="Placeholder">
+          <gsk-mwc-menu>
+            <gsk-mwc-list>
+              <gsk-mwc-list-item value="one">this is choice one</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="two">this is choice two</gsk-mwc-list-item>
+            </gsk-mwc-list>
+          </gsk-mwc-menu>
+        </gsk-mwc-select>
       </div>
     </div>
 
     <div class="demo-group">
       <div>
         <h3>outlined</h3>
-        <mwc-select outlined leadingIconContent="event" label="Choose an item" placeholder="Placeholder">
+        <gsk-mwc-select outlined leadingIconContent="event" label="Choose an item" placeholder="Placeholder">
           <select>
             <option value="" disabled selected></option>
             <option value="grains">
@@ -133,37 +133,37 @@ limitations under the License.
               Fruit
             </option>
           </select>
-        </mwc-select>
+        </gsk-mwc-select>
       </div>
 
       <div>
         <h3>outlined enhanced</h3>
-        <mwc-select leadingIconContent="event" outlined label="Choose an item" placeholder="Placeholder">
-          <mwc-menu>
-            <mwc-list>
-              <mwc-list-item value="one">this is choice one</mwc-list-item>
-              <mwc-list-item value="two">this is choice two</mwc-list-item>
-              <mwc-list-item value="three">this is choice three</mwc-list-item>
-              <mwc-list-item disabled value="four">this is choice four</mwc-list-item>
-              <mwc-list-divider></mwc-list-divider>
-              <mwc-list-item value="aaa">this is choice aaa</mwc-list-item>
-              <mwc-list-item value="bbb">this is choice bbb</mwc-list-item>
-            </mwc-list>
-          </mwc-menu>
-        </mwc-select>
+        <gsk-mwc-select leadingIconContent="event" outlined label="Choose an item" placeholder="Placeholder">
+          <gsk-mwc-menu>
+            <gsk-mwc-list>
+              <gsk-mwc-list-item value="one">this is choice one</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="two">this is choice two</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="three">this is choice three</gsk-mwc-list-item>
+              <gsk-mwc-list-item disabled value="four">this is choice four</gsk-mwc-list-item>
+              <gsk-mwc-list-divider></gsk-mwc-list-divider>
+              <gsk-mwc-list-item value="aaa">this is choice aaa</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="bbb">this is choice bbb</gsk-mwc-list-item>
+            </gsk-mwc-list>
+          </gsk-mwc-menu>
+        </gsk-mwc-select>
       </div>
 
       <div>
         <h3>outlined disabled</h3>
 
-        <mwc-select outlined disabled leadingIconContent="event" label="Disabled..." placeholder="Placeholder">
-          <mwc-menu>
-            <mwc-list>
-              <mwc-list-item value="one">this is choice one</mwc-list-item>
-              <mwc-list-item value="two">this is choice two</mwc-list-item>
-            </mwc-list>
-          </mwc-menu>
-        </mwc-select>
+        <gsk-mwc-select outlined disabled leadingIconContent="event" label="Disabled..." placeholder="Placeholder">
+          <gsk-mwc-menu>
+            <gsk-mwc-list>
+              <gsk-mwc-list-item value="one">this is choice one</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="two">this is choice two</gsk-mwc-list-item>
+            </gsk-mwc-list>
+          </gsk-mwc-menu>
+        </gsk-mwc-select>
       </div>
     </div>
 
@@ -171,7 +171,7 @@ limitations under the License.
 
     <div class="demo-group">
       <div>
-        <mwc-select
+        <gsk-mwc-select
           outlined
           label="Choose an item"
           helperTextContent="Helper Text"
@@ -193,11 +193,11 @@ limitations under the License.
               Fruit
             </option>
           </select>
-        </mwc-select>
+        </gsk-mwc-select>
       </div>
 
       <div>
-        <mwc-select
+        <gsk-mwc-select
           outlined
           label="Choose an item"
           helperTextContent="Helper Text"
@@ -207,18 +207,18 @@ limitations under the License.
           leadingIconContent="event"
           placeholder="Placeholder"
         >
-          <mwc-menu>
-            <mwc-list>
-              <mwc-list-item value="one">this is choice one</mwc-list-item>
-              <mwc-list-item value="two">this is choice two</mwc-list-item>
-              <mwc-list-item value="three">this is choice three</mwc-list-item>
-              <mwc-list-item disabled value="four">this is choice four</mwc-list-item>
-              <mwc-list-divider></mwc-list-divider>
-              <mwc-list-item value="aaa">this is choice aaa</mwc-list-item>
-              <mwc-list-item value="bbb">this is choice bbb</mwc-list-item>
-            </mwc-list>
-          </mwc-menu>
-        </mwc-select>
+          <gsk-mwc-menu>
+            <gsk-mwc-list>
+              <gsk-mwc-list-item value="one">this is choice one</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="two">this is choice two</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="three">this is choice three</gsk-mwc-list-item>
+              <gsk-mwc-list-item disabled value="four">this is choice four</gsk-mwc-list-item>
+              <gsk-mwc-list-divider></gsk-mwc-list-divider>
+              <gsk-mwc-list-item value="aaa">this is choice aaa</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="bbb">this is choice bbb</gsk-mwc-list-item>
+            </gsk-mwc-list>
+          </gsk-mwc-menu>
+        </gsk-mwc-select>
       </div>
     </div>
 
@@ -226,7 +226,7 @@ limitations under the License.
 
     <div class="demo-group">
       <div>
-        <mwc-select
+        <gsk-mwc-select
           outlined
           label="Choose an item"
           helperTextContent="Helper Text"
@@ -247,11 +247,11 @@ limitations under the License.
               Fruit
             </option>
           </select>
-        </mwc-select>
+        </gsk-mwc-select>
       </div>
 
       <div>
-        <mwc-select
+        <gsk-mwc-select
           outlined
           label="Choose an item"
           helperTextContent="Helper Text"
@@ -259,18 +259,18 @@ limitations under the License.
           id="select_2"
           leadingIconContent="event"
         >
-          <mwc-menu>
-            <mwc-list>
-              <mwc-list-item value="one" selected>this is choice one</mwc-list-item>
-              <mwc-list-item value="two">this is choice two</mwc-list-item>
-              <mwc-list-item value="three">this is choice three</mwc-list-item>
-              <mwc-list-item disabled value="four">this is choice four</mwc-list-item>
-              <mwc-list-divider></mwc-list-divider>
-              <mwc-list-item value="aaa">this is choice aaa</mwc-list-item>
-              <mwc-list-item value="bbb">this is choice bbb</mwc-list-item>
-            </mwc-list>
-          </mwc-menu>
-        </mwc-select>
+          <gsk-mwc-menu>
+            <gsk-mwc-list>
+              <gsk-mwc-list-item value="one" selected>this is choice one</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="two">this is choice two</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="three">this is choice three</gsk-mwc-list-item>
+              <gsk-mwc-list-item disabled value="four">this is choice four</gsk-mwc-list-item>
+              <gsk-mwc-list-divider></gsk-mwc-list-divider>
+              <gsk-mwc-list-item value="aaa">this is choice aaa</gsk-mwc-list-item>
+              <gsk-mwc-list-item value="bbb">this is choice bbb</gsk-mwc-list-item>
+            </gsk-mwc-list>
+          </gsk-mwc-menu>
+        </gsk-mwc-select>
       </div>
     </div>
 
@@ -278,7 +278,7 @@ limitations under the License.
 
     <div class="demo-group">
       <div>
-        <mwc-select
+        <gsk-mwc-select
           outlined
           multiple
           label="Choose items..."
@@ -288,30 +288,30 @@ limitations under the License.
           placeholder="Placeholder"
           id="select_3"
         >
-          <mwc-menu>
-            <mwc-list>
-              <mwc-list-item value="one">
+          <gsk-mwc-menu>
+            <gsk-mwc-list>
+              <gsk-mwc-list-item value="one">
                 Item one
-                <mwc-checkbox slot="graphic" checked></mwc-checkbox>
-              </mwc-list-item>
+                <gsk-mwc-checkbox slot="graphic" checked></gsk-mwc-checkbox>
+              </gsk-mwc-list-item>
 
-              <mwc-list-item value="two">
+              <gsk-mwc-list-item value="two">
                 Item two
-                <mwc-checkbox slot="graphic" checked></mwc-checkbox>
-              </mwc-list-item>
+                <gsk-mwc-checkbox slot="graphic" checked></gsk-mwc-checkbox>
+              </gsk-mwc-list-item>
 
-              <mwc-list-item value="three">
+              <gsk-mwc-list-item value="three">
                 Item three
-                <mwc-checkbox slot="graphic" checked></mwc-checkbox>
-              </mwc-list-item>
+                <gsk-mwc-checkbox slot="graphic" checked></gsk-mwc-checkbox>
+              </gsk-mwc-list-item>
 
-              <mwc-list-item value="four">
+              <gsk-mwc-list-item value="four">
                 Item four
-                <mwc-checkbox slot="graphic" checked></mwc-checkbox>
-              </mwc-list-item>
-            </mwc-list>
-          </mwc-menu>
-        </mwc-select>
+                <gsk-mwc-checkbox slot="graphic" checked></gsk-mwc-checkbox>
+              </gsk-mwc-list-item>
+            </gsk-mwc-list>
+          </gsk-mwc-menu>
+        </gsk-mwc-select>
       </div>
     </div>
 

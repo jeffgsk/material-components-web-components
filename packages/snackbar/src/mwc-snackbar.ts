@@ -24,7 +24,7 @@ import {
   classMap,
   addHasRemoveClass,
   emit
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import MDCSnackbarFoundation from '@material/snackbar/foundation';
 import { MDCSnackbarAdapter } from '@material/snackbar/adapter';
 
@@ -39,11 +39,11 @@ export const EVENTS = {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-snackbar': Snackbar;
+    'gsk-mwc-snackbar': Snackbar;
   }
 }
 
-@customElement('mwc-snackbar' as any)
+@customElement('gsk-mwc-snackbar' as any)
 export class Snackbar extends BaseElement {
   protected mdcFoundation!: MDCSnackbarFoundation;
 

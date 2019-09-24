@@ -21,7 +21,7 @@ import {
   customElement,
   eventOptions,
   addHasRemoveClass
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import { matches } from '@material/dom/ponyfill';
 import MDCTabScrollerFoundation from '@material/tab-scroller/foundation';
 import { MDCTabScrollerAdapter } from '@material/tab-scroller/adapter';
@@ -30,11 +30,11 @@ import { style } from './mwc-tab-scroller-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-tab-scroller': TabScroller;
+    'gsk-mwc-tab-scroller': TabScroller;
   }
 }
 
-@customElement('mwc-tab-scroller' as any)
+@customElement('gsk-mwc-tab-scroller' as any)
 export class TabScroller extends BaseElement {
 
   protected mdcFoundation!: MDCTabScrollerFoundation;

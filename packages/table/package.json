@@ -1,11 +1,11 @@
 {
-  "name": "@material/mwc-table",
-  "version": "0.6.0",
+  "name": "@gsk-platforms/mwc-table",
+  "version": "0.8.36",
   "description": "",
   "main": "mwc-table.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-components/material-components-web-components.git"
+    "url": "https://mygithub.gsk.com/gsk-tech/gsk-material-components-web-components.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,14 +18,14 @@
     "@material/elevation": "~1.1.0",
     "@material/shape": "~1.1.1",
     "@material/typography": "~2.3.0",
-    "@material/mwc-base": "~0.6.0",
-    "@material/mwc-icon": "~0.6.0",
-    "@material/mwc-circular-progress": "~0.6.0",
-    "@material/mwc-tooltip": "~0.6.0",
+    "@gsk-platforms/mwc-base": "~0.8.36",
+    "@gsk-platforms/mwc-icon": "~0.8.36",
+    "@gsk-platforms/mwc-circular-progress": "~0.8.36",
+    "@gsk-platforms/mwc-tooltip": "~0.8.36",
     "lit-element": "~2.2.0",
     "lit-html": "~1.1.1"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   }
 }

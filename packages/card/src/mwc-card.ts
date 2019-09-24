@@ -23,12 +23,12 @@ import {
   findAssignedElements,
   query,
   PropertyValues
-} from "@material/mwc-base/base-element";
-import { ripple } from  "@material/mwc-ripple/ripple-directive";
+} from "@gsk-platforms/mwc-base/base-element";
+import { ripple } from  "@gsk-platforms/mwc-ripple/ripple-directive";
 
 import { style } from "./mwc-card-css";
 
-import "@material/mwc-icon/mwc-icon-font";
+import "@gsk-platforms/mwc-icon/mwc-icon-font";
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -105,11 +105,11 @@ export class Card extends LitElement {
   }
 
   protected get actionButtons() {
-    return this.slotActionButtonsEl && findAssignedElements(this.slotActionButtonsEl, 'mwc-button');
+    return this.slotActionButtonsEl && findAssignedElements(this.slotActionButtonsEl, 'gsk-mwc-button');
   }
 
   protected get actionIcons() {
-    return this.slotActionIconsEl && findAssignedElements(this.slotActionIconsEl, 'mwc-icon-button');
+    return this.slotActionIconsEl && findAssignedElements(this.slotActionIconsEl, 'gsk-mwc-icon-button');
   }
 
   static styles = style;

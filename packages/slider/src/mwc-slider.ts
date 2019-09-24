@@ -25,7 +25,7 @@ import {
   SpecificEventListener,
   addHasRemoveClass,
   emit
-} from '@material/mwc-base/form-element';
+} from '@gsk-platforms/mwc-base/form-element';
 import { repeat } from 'lit-html/directives/repeat';
 import MDCSliderFoundation from '@material/slider/foundation';
 import { MDCSliderAdapter } from '@material/slider/adapter';
@@ -41,11 +41,11 @@ export const EVENTS = {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-slider': Slider;
+    'gsk-mwc-slider': Slider;
   }
 }
 
-@customElement('mwc-slider' as any)
+@customElement('gsk-mwc-slider' as any)
 export class Slider extends FormElement {
   protected mdcFoundation!: MDCSliderFoundation;
 

@@ -22,7 +22,7 @@ import {
     property,
     addHasRemoveClass,
     PropertyValues
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import { styleMap } from 'lit-html/directives/style-map';
 import { MDCTooltipFoundation } from './foundation';
 import { MDCTooltipAdapter } from './adapter';
@@ -31,11 +31,11 @@ import { style } from './mwc-tooltip-css';
 
 declare global {
     interface HTMLElementTagNameMap {
-        'mwc-tooltip': Tooltip;
+        'gsk-mwc-tooltip': Tooltip;
     }
 }
 
-@customElement('mwc-tooltip' as any)
+@customElement('gsk-mwc-tooltip' as any)
 export class Tooltip extends BaseElement {
 
     @query('.mdc-tooltip')

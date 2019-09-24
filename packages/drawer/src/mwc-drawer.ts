@@ -25,7 +25,7 @@ import {
   classMap,
   addHasRemoveClass,
   emit
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import MDCModalDrawerFoundation from '@material/drawer/modal/foundation';
 import MDCDismissibleDrawerFoundation from '@material/drawer/dismissible/foundation';
 import { MDCDrawerAdapter } from '@material/drawer/adapter';
@@ -41,7 +41,7 @@ export const EVENTS = {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-drawer': Drawer;
+    'gsk-mwc-drawer': Drawer;
   }
 
   interface Document {
@@ -56,7 +56,7 @@ declare global {
   }
 }
 
-@customElement('mwc-drawer' as any)
+@customElement('gsk-mwc-drawer' as any)
 export class Drawer extends BaseElement {
 
   /**

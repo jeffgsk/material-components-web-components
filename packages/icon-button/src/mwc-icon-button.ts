@@ -15,20 +15,20 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import { customElement } from '@material/mwc-base/base-element';
+import { customElement } from '@gsk-platforms/mwc-base/base-element';
 import { IconButtonBase } from './icon-button-base';
 
 import { style } from './mwc-icon-button-css';
 
-import '@material/mwc-icon/mwc-icon-font';
+import '@gsk-platforms/mwc-icon/mwc-icon-font';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-icon-button': IconButton
+    'gsk-mwc-icon-button': IconButton
   }
 }
 
-@customElement('mwc-icon-button' as any)
+@customElement('gsk-mwc-icon-button' as any)
 export class IconButton extends IconButtonBase {
   static styles = style;
 }

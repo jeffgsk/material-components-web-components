@@ -23,20 +23,20 @@ import {
   classMap,
   addHasRemoveClass,
   emit
-} from '@material/mwc-base/base-element';
-import { TabIndicator } from '@material/mwc-tab-indicator';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
+} from '@gsk-platforms/mwc-base/base-element';
+import { TabIndicator } from '@gsk-platforms/mwc-tab-indicator';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
 import MDCTabFoundation from '@material/tab/foundation';
 import { MDCTabAdapter } from '@material/tab/adapter';
 
 import { style } from './mwc-tab-css';
 
 // Make TypeScript not remove the import.
-import '@material/mwc-tab-indicator';
+import '@gsk-platforms/mwc-tab-indicator';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-tab': Tab;
+    'gsk-mwc-tab': Tab;
   }
 }
 
@@ -47,7 +47,7 @@ export const EVENTS = {
   interacted: 'interacted'
 };
 
-@customElement('mwc-tab' as any)
+@customElement('gsk-mwc-tab' as any)
 export class Tab extends BaseElement {
 
   protected mdcFoundation!: MDCTabFoundation;
@@ -57,7 +57,7 @@ export class Tab extends BaseElement {
   @query('.mdc-tab')
   protected mdcRoot!: HTMLElement;
 
-  @query('mwc-tab-indicator')
+  @query('gsk-mwc-tab-indicator')
   protected tabIndicator!: TabIndicator;
 
   @property()
@@ -88,7 +88,7 @@ export class Tab extends BaseElement {
    * onTransitionEnd (needed?)
    */
 
-  @query('mwc-tab-indicator')
+  @query('gsk-mwc-tab-indicator')
   protected _tabIndicator!: HTMLElement;
 
   @query('.mdc-tab__content')

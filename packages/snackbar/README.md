@@ -17,15 +17,15 @@ A [Material Components](https://material.io/components/) icon implementation usi
 
   1. Add mwc-snackbar to your project:
 
-      ```npm i @material/mwc-snackbar```
+      ```npm i @gsk-platforms/mwc-snackbar```
 
   1. Import the mwc-snackbar definition into your HTML page:
 
-      ```<script type="module" src="@material/mwc-snackbar/index.js"></script>```
+      ```<script type="module" src="@gsk-platforms/mwc-snackbar/index.js"></script>```
 
       Or into your module script:
 
-      ```import { Snackbar } from "@material/mwc-snackbar"```
+      ```import { Snackbar } from "@gsk-platforms/mwc-snackbar"```
 
   1. Create an instance of mwc-snackbar in your HTML page, or via any framework that [supports rendering Custom Elements](https://custom-elements-everywhere.com/):
 
@@ -39,7 +39,7 @@ A [Material Components](https://material.io/components/) icon implementation usi
 
       ```polymer serve```
 
-  > mwc-snackbar is published on [npm](https://www.npmjs.com/package/@material/mwc-snackbar) using JavaScript Modules.
+  > mwc-snackbar is published on [npm](https://www.npmjs.com/package/@gsk-platforms/mwc-snackbar) using JavaScript Modules.
   This means it can take advantage of the standard native JavaScript module loader available in all current major browsers.
   >
   > However, since mwc-snackbar uses npm convention to reference dependencies by name, a light transform to rewrite specifiers to URLs is required to get it to run in the browser. The polymer-cli's development server `polymer serve` automatically handles this transform.

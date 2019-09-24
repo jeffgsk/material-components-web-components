@@ -22,9 +22,9 @@ import {
   query,
   customElement,
   emit
-} from '@material/mwc-base/base-element';
-import { Tab } from '@material/mwc-tab';
-import { TabScroller } from '@material/mwc-tab-scroller';
+} from '@gsk-platforms/mwc-base/base-element';
+import { Tab } from '@gsk-platforms/mwc-tab';
+import { TabScroller } from '@gsk-platforms/mwc-tab-scroller';
 import MDCTabBarFoundation from '@material/tab-bar/foundation';
 import { MDCTabBarAdapter } from '@material/tab-bar/adapter';
 import { MDCTabInteractionEvent } from '@material/tab/types';
@@ -32,12 +32,12 @@ import { MDCTabInteractionEvent } from '@material/tab/types';
 import { style } from './mwc-tab-bar-css';
 
 // Make TypeScript not remove the imports.
-import '@material/mwc-tab';
-import '@material/mwc-tab-scroller';
+import '@gsk-platforms/mwc-tab';
+import '@gsk-platforms/mwc-tab-scroller';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-tab-bar': TabBar;
+    'gsk-mwc-tab-bar': TabBar;
   }
 }
 
@@ -45,7 +45,7 @@ export const EVENTS = {
   activated: 'activated'
 };
 
-@customElement('mwc-tab-bar' as any)
+@customElement('gsk-mwc-tab-bar' as any)
 export class TabBar extends BaseElement {
 
   protected mdcFoundation!: MDCTabBarFoundation;
@@ -55,7 +55,7 @@ export class TabBar extends BaseElement {
   @query('.mdc-tab-bar')
   protected mdcRoot!: HTMLElement
 
-  @query('mwc-tab-scroller')
+  @query('gsk-mwc-tab-scroller')
   protected scrollerElement!: TabScroller
 
   @query('slot')

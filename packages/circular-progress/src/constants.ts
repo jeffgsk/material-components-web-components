@@ -22,9 +22,9 @@
  */
 
 export const cssClasses = {
-  CLOSED_CLASS: 'mwc-circular-progress--closed',
-  DETERMINATE_CLASS: 'mwc-circular-progress--determinate',
-  DISABLE_SHRINK_CLASS: 'mwc-circular-progress--disable-shrink',
-  INDETERMINATE_CLASS: 'mwc-circular-progress--indeterminate',
-  FIXED_CLASS: 'mwc-circular-progress--fixed'
+  CLOSED_CLASS: 'gsk-mwc-circular-progress--closed',
+  DETERMINATE_CLASS: 'gsk-mwc-circular-progress--determinate',
+  DISABLE_SHRINK_CLASS: 'gsk-mwc-circular-progress--disable-shrink',
+  INDETERMINATE_CLASS: 'gsk-mwc-circular-progress--indeterminate',
+  FIXED_CLASS: 'gsk-mwc-circular-progress--fixed'
 };

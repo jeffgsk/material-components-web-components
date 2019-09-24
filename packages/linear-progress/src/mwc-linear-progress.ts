@@ -22,7 +22,7 @@ import {
   query,
   customElement,
   addHasRemoveClass
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import MDCLinearProgressFoundation from '@material/linear-progress/foundation';
 import { MDCLinearProgressAdapter } from '@material/linear-progress/adapter';
 
@@ -30,11 +30,11 @@ import { style } from './mwc-linear-progress-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-linear-progress': LinearProgress;
+    'gsk-mwc-linear-progress': LinearProgress;
   }
 }
 
-@customElement('mwc-linear-progress' as any)
+@customElement('gsk-mwc-linear-progress' as any)
 export class LinearProgress extends BaseElement {
   protected mdcFoundation!: MDCLinearProgressFoundation;
 

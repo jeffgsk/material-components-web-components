@@ -21,9 +21,9 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.prototype.entries%2CArray.prototype.find%2CArray.prototype.findIndex%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.forEach%2CArray.prototype.reduce%2CArray.prototype.map%2CCustomEvent%2CArray.prototype.every%2CArray.isArray%2CArray.of%2CElement%2CElement.prototype.matches%2CEvent%2CMutationObserver%2CPromise%2CPromise.prototype.finally%2CString.prototype.includes%2CString.prototype.startsWith%2CString.prototype.trim%2Cconsole.error%2Cconsole.log%2Cconsole.info%2Cconsole.warn%2Cconsole.trace%2Cfetch%2CElement.prototype.classList%2CElement.prototype.append%2CElement.prototype.prepend%2CElement.prototype.remove%2CElement.prototype.toggleAttribute%2CElement.prototype.replaceWith%2CElement.prototype.closest%2CElement.prototype.cloneNode%2CElement.prototype.before%2CElement.prototype.after%2CElement.prototype.placeholder%2CElement.prototype.dataset%2CJSON%2CNode.prototype.contains%2CNodeList.prototype.forEach%2CNumber.isInteger%2CNumber.isNaN%2CObject.assign%2CObject.entries%2CObject.freeze%2CObject.values%2CObject.keys"></script>
   <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-icon-button/mwc-icon-button.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-button/mwc-button.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-icon/mwc-icon.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-icon-button/mwc-icon-button.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-button/mwc-button.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-icon/mwc-icon.js"></script>
   <link rel="stylesheet" href="demo-component.css">
   <style>
     .light {
@@ -52,7 +52,7 @@ limitations under the License.
 </head>
 <body class="unresolved">
   <header>
-    <a href="index.html"><mwc-icon-button icon="arrow_back"></mwc-icon-button></a>
+    <a href="index.html"><gsk-mwc-icon-button icon="arrow_back"></gsk-mwc-icon-button></a>
     <span>Buttons</span>
   </header>
 
@@ -61,38 +61,38 @@ limitations under the License.
     <h4>labeled</h4>
 
     <div class="demo-group-spaced">
-      <mwc-button label="Normal"></mwc-button>
-      <mwc-button class="light" raised label="raised"></mwc-button>
-      <mwc-button unelevated label="unelevated"></mwc-button>
-      <mwc-button outlined label="outlined"></mwc-button>
-      <mwc-button class="pink" dense label="dense"></mwc-button>
-      <mwc-button class="pink wide" raised label="wide"></mwc-button>
-      <mwc-button disabled label="disabled"></mwc-button>
+      <gsk-mwc-button label="Normal"></gsk-mwc-button>
+      <gsk-mwc-button class="light" raised label="raised"></gsk-mwc-button>
+      <gsk-mwc-button unelevated label="unelevated"></gsk-mwc-button>
+      <gsk-mwc-button outlined label="outlined"></gsk-mwc-button>
+      <gsk-mwc-button class="pink" dense label="dense"></gsk-mwc-button>
+      <gsk-mwc-button class="pink wide" raised label="wide"></gsk-mwc-button>
+      <gsk-mwc-button disabled label="disabled"></gsk-mwc-button>
     </div>
 
     <h4>icon labeled</h4>
 
     <div class="demo-group-spaced">
-      <mwc-button label="Normal" icon="explore"></mwc-button>
-      <mwc-button class="light" raised label="raised" icon="code"></mwc-button>
-      <mwc-button unelevated label="unelevated" icon="check"></mwc-button>
-      <mwc-button outlined label="outlined" icon="alarm"></mwc-button>
-      <mwc-button class="pink" dense label="dense" icon="feedback"></mwc-button>
-      <mwc-button class="pink wide" raised label="wide" icon="code"></mwc-button>
-      <mwc-button disabled label="disabled" icon="fingerprint"></mwc-button>
+      <gsk-mwc-button label="Normal" icon="explore"></gsk-mwc-button>
+      <gsk-mwc-button class="light" raised label="raised" icon="code"></gsk-mwc-button>
+      <gsk-mwc-button unelevated label="unelevated" icon="check"></gsk-mwc-button>
+      <gsk-mwc-button outlined label="outlined" icon="alarm"></gsk-mwc-button>
+      <gsk-mwc-button class="pink" dense label="dense" icon="feedback"></gsk-mwc-button>
+      <gsk-mwc-button class="pink wide" raised label="wide" icon="code"></gsk-mwc-button>
+      <gsk-mwc-button disabled label="disabled" icon="fingerprint"></gsk-mwc-button>
     </div>
 
     <h4>trailing icon labeled</h4>
 
-    <mwc-button label="Normal" icon="explore" trailingIcon></mwc-button>
+    <gsk-mwc-button label="Normal" icon="explore" trailingIcon></gsk-mwc-button>
 
     <h4>link</h4>
 
-    <mwc-button label="Normal" icon="explore" target="_blank" href="button.html"></mwc-button>
+    <gsk-mwc-button label="Normal" icon="explore" target="_blank" href="button.html"></gsk-mwc-button>
 
     <script type="module">
       import {html, css} from 'lit-element/lit-element.js';
-      import {Button} from '@material/mwc-button/mwc-button.js';
+      import {Button} from '@gsk-platforms/mwc-button/mwc-button.js';
       class CustomButton extends Button {
         static get styles() {
           return [

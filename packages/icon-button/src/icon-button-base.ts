@@ -24,10 +24,10 @@ import {
   addHasRemoveClass,
   PropertyValues,
   emit
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 import MDCIconButtonToggleFoundation from '@material/icon-button/foundation';
 import { MDCIconButtonToggleAdapter } from '@material/icon-button/adapter';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
 
 export abstract class IconButtonBase extends BaseElement {
 

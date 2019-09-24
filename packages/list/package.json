@@ -1,11 +1,11 @@
 {
-  "name": "@material/mwc-list",
-  "version": "0.6.0",
+  "name": "@gsk-platforms/mwc-list",
+  "version": "0.8.36",
   "description": "",
   "main": "mwc-list.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-components/material-components-web-components.git"
+    "url": "https://mygithub.gsk.com/gsk-tech/gsk-material-components-web-components.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,7 @@
   "dependencies": {
     "@material/feature-targeting": "^0.44.1",
     "@material/list": "~2.3.0",
-    "@material/mwc-base": "~0.6.0",
+    "@gsk-platforms/mwc-base": "~0.8.36",
     "@material/ripple": "^2.3.0",
     "@material/rtl": "^0.42.0",
     "@material/shape": "^1.1.1",
@@ -23,6 +23,6 @@
     "@material/typography": "^2.3.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   }
 }

@@ -16,7 +16,7 @@ limitations under the License.
 */
 import { query, property, LitElement, customElement, html, svg, PropertyValues } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map';
-import { observer } from '@material/mwc-base/observer';
+import { observer } from '@gsk-platforms/mwc-base/observer';
 import { cssClasses } from './constants';
 import MDCCircularProgressFoundation from './foundation';
 
@@ -41,11 +41,11 @@ export const easeIn = t => {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-circular-progress': CircularProgress;
+    'gsk-mwc-circular-progress': CircularProgress;
   }
 }
 
-@customElement('mwc-circular-progress' as any)
+@customElement('gsk-mwc-circular-progress' as any)
 export class CircularProgress extends LitElement {
   protected mdcFoundation!: MDCCircularProgressFoundation;
   protected SIZE = 44;
@@ -145,14 +145,14 @@ export class CircularProgress extends LitElement {
     const { fixed, determinate, closed, SIZE, thickness, disableShrink } = this;
 
     const classes = {
-      'mwc-circular-progress': true,
+      'gsk-mwc-circular-progress': true,
       [cssClasses.FIXED_CLASS]: fixed,
       [cssClasses.DETERMINATE_CLASS]: determinate && !fixed,
       [cssClasses.INDETERMINATE_CLASS]: !determinate && !fixed,
       [cssClasses.DISABLE_SHRINK_CLASS]: disableShrink,
       [cssClasses.CLOSED_CLASS]: closed,
-      'mwc-circular-progress--primary': !this.secondary && !this.color,
-      'mwc-circular-progress--secondary': this.secondary && !this.color,
+      'gsk-mwc-circular-progress--primary': !this.secondary && !this.color,
+      'gsk-mwc-circular-progress--secondary': this.secondary && !this.color,
     };
 
     return html`

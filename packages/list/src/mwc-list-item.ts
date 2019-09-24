@@ -25,12 +25,12 @@ import {
   findAssignedElement,
   observer,
   // observer
-} from '@material/mwc-base/base-element';
-import { ripple } from '@material/mwc-ripple/ripple-directive';
+} from '@gsk-platforms/mwc-base/base-element';
+import { ripple } from '@gsk-platforms/mwc-ripple/ripple-directive';
 
 import { style } from './mwc-list-item-css';
 
-import '@material/mwc-icon/mwc-icon';
+import '@gsk-platforms/mwc-icon/mwc-icon';
 
 interface List extends HTMLElement {
   content: Boolean;
@@ -40,11 +40,11 @@ interface List extends HTMLElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-list-item': ListItem;
+    'gsk-mwc-list-item': ListItem;
   }
 }
 
-@customElement('mwc-list-item' as any)
+@customElement('gsk-mwc-list-item' as any)
 export class ListItem extends LitElement {
 
   @query('.mdc-list-item')

@@ -22,9 +22,9 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.prototype.entries%2CArray.prototype.find%2CArray.prototype.findIndex%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.forEach%2CArray.prototype.reduce%2CArray.prototype.map%2CCustomEvent%2CArray.prototype.every%2CArray.isArray%2CArray.of%2CElement%2CElement.prototype.matches%2CEvent%2CMutationObserver%2CPromise%2CPromise.prototype.finally%2CString.prototype.includes%2CString.prototype.startsWith%2CString.prototype.trim%2Cconsole.error%2Cconsole.log%2Cconsole.info%2Cconsole.warn%2Cconsole.trace%2Cfetch%2CElement.prototype.classList%2CElement.prototype.append%2CElement.prototype.prepend%2CElement.prototype.remove%2CElement.prototype.toggleAttribute%2CElement.prototype.replaceWith%2CElement.prototype.closest%2CElement.prototype.cloneNode%2CElement.prototype.before%2CElement.prototype.after%2CElement.prototype.placeholder%2CElement.prototype.dataset%2CJSON%2CNode.prototype.contains%2CNodeList.prototype.forEach%2CNumber.isInteger%2CNumber.isNaN%2CObject.assign%2CObject.entries%2CObject.freeze%2CObject.values%2CObject.keys"></script>
   <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-button/mwc-button.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-dialog/mwc-dialog.js"></script>
-  <script type="module" src="../node_modules/@material/mwc-icon-button/mwc-icon-button.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-button/mwc-button.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-dialog/mwc-dialog.js"></script>
+  <script type="module" src="../node_modules/@gsk-platforms/mwc-icon-button/mwc-icon-button.js"></script>
   <link rel="stylesheet" href="demo-component.css">
 
   <style>
@@ -40,7 +40,7 @@ limitations under the License.
 
 <body class="unresolved">
   <header>
-    <a href="index.html"><mwc-icon-button icon="arrow_back"></mwc-icon-button></a>
+    <a href="index.html"><gsk-mwc-icon-button icon="arrow_back"></gsk-mwc-icon-button></a>
     <span>Dialog</span>
   </header>
 
@@ -63,7 +63,7 @@ limitations under the License.
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
       dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
       dolore magna aliqua. 
-      Lorem ipsum dolor sit amet, <mwc-button id="popoverBtn1" raised label="OPEN POPOVER 1 (NO FORMAT)"></mwc-button>      adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      Lorem ipsum dolor sit amet, <gsk-mwc-button id="popoverBtn1" raised label="OPEN POPOVER 1 (NO FORMAT)"></gsk-mwc-button>      adipiscing elit, sed do eiusmod tempor incididunt ut labore et
     dolore magna aliqua. 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
     dolore magna aliqua. 
@@ -99,16 +99,16 @@ limitations under the License.
       dolore magna aliqua. 
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
       dolore magna aliqua.
-      <mwc-dialog id="popoverDialog1" popover noFormatContent>
+      <gsk-mwc-dialog id="popoverDialog1" popover noFormatContent>
           <p>Posuere ac ut consequat semper viverra nam libero. Arcu ac tortor dignissim
             convallis aenean et tortor at risus.</p>
-        </mwc-dialog>
-      <mwc-dialog for="popoverBtn2" id="popoverDialog2" popoverSize="small" popover headerLabel="Popover Dialog 2">
+        </gsk-mwc-dialog>
+      <gsk-mwc-dialog for="popoverBtn2" id="popoverDialog2" popoverSize="small" popover headerLabel="Popover Dialog 2">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Enim nec dui nunc mattis enim ut tellus elementum. Bibendum enim facilisis gravida neque
             convallis a cras semper. Posuere ac ut consequat semper viverra nam libero. Arcu ac tortor dignissim
             convallis aenean et tortor at risus.</p>
-        </mwc-dialog>
+        </gsk-mwc-dialog>
       </div>
       <script type="module">
         popoverDialog1.setAnchorElement(popoverBtn1);
@@ -128,15 +128,15 @@ limitations under the License.
       </script>
 
 
-      <mwc-button id="button" raised label="Dialog"></mwc-button>
-      <mwc-dialog for="button" id="dialog" headerLabel="Dialog Title" acceptLabel="OK" declineLabel="Cancel">
+      <gsk-mwc-button id="button" raised label="Dialog"></gsk-mwc-button>
+      <gsk-mwc-dialog for="button" id="dialog" headerLabel="Dialog Title" acceptLabel="OK" declineLabel="Cancel">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
           dolore magna aliqua. Enim nec dui nunc mattis enim ut tellus elementum. Bibendum enim facilisis gravida neque
           convallis a cras semper. Posuere ac ut consequat semper viverra nam libero. Arcu ac tortor dignissim
           convallis aenean et tortor at risus. Leo duis ut diam quam nulla. Quis hendrerit dolor magna eget est lorem.
           Aenean euismod elementum nisi quis eleifend. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque
           mauris. Nibh sit amet commodo nulla facilisi nullam vehicula. Massa tempor nec feugiat nisl pretium.</p>
-      </mwc-dialog>
+      </gsk-mwc-dialog>
       <script type="module">
         button.addEventListener('click', (e) => {
           dialog.open();
@@ -147,11 +147,11 @@ limitations under the License.
         });
       </script>
 
-      <mwc-button id="scrollingButton" raised label="Scrolling Dialog"></mwc-button>
-      <mwc-dialog for="scrollingButton" id="scrollingDialog" scrollable headerLabel="Scrolling Dialog Title" acceptLabel="OK" declineLabel="Cancel">
+      <gsk-mwc-button id="scrollingButton" raised label="Scrolling Dialog"></gsk-mwc-button>
+      <gsk-mwc-dialog for="scrollingButton" id="scrollingDialog" scrollable headerLabel="Scrolling Dialog Title" acceptLabel="OK" declineLabel="Cancel">
         <span slot="header">More header stuff</span>
         <span slot="footer">More footer stuff&nbsp;&nbsp;</span>
-        <mwc-button slot="footer" compact ripple label="Button" icon="mail"></mwc-button>
+        <gsk-mwc-button slot="footer" compact ripple label="Button" icon="mail"></gsk-mwc-button>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
           dolore magna aliqua. Sit amet luctus venenatis lectus magna fringilla urna porttitor. Risus quis varius quam
           quisque id diam vel quam elementum. Faucibus vitae aliquet nec ullamcorper sit amet risus. Laoreet sit amet
@@ -225,7 +225,7 @@ limitations under the License.
           blandit. Ultrices sagittis orci a scelerisque purus semper eget. Id velit ut tortor pretium viverra
           suspendisse potenti nullam ac. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci.</p>
 
-      </mwc-dialog>
+      </gsk-mwc-dialog>
 
     </div>
     <script type="module">

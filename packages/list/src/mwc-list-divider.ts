@@ -21,17 +21,17 @@ import {
   html,
   classMap,
   property
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 
 import { style } from './mwc-list-item-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-list-divider': ListDivider;
+    'gsk-mwc-list-divider': ListDivider;
   }
 }
 
-@customElement('mwc-list-divider' as any)
+@customElement('gsk-mwc-list-divider' as any)
 export class ListDivider extends LitElement {
 
   @query('.mdc-list-divider')

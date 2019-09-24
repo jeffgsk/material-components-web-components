@@ -21,17 +21,17 @@ import {
   html,
   classMap,
   property
-} from '@material/mwc-base/base-element';
+} from '@gsk-platforms/mwc-base/base-element';
 
 import { style } from './mwc-list-group-header-css';
 
 declare global {
   interface HTMLElementTagNameMap {
-    'mwc-list-group-header': ListGroupHeader;
+    'gsk-mwc-list-group-header': ListGroupHeader;
   }
 }
 
-@customElement('mwc-list-group-header' as any)
+@customElement('gsk-mwc-list-group-header' as any)
 export class ListGroupHeader extends LitElement {
 
   @query('.mdc-list-group-header')

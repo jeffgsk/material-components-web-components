@@ -1,11 +1,11 @@
 {
-  "name": "@material/mwc-tab-bar",
-  "version": "0.6.0",
+  "name": "@gsk-platforms/mwc-tab-bar",
+  "version": "0.8.36",
   "description": "",
   "main": "mwc-tab-bar.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/material-components/material-components-web-components.git"
+    "url": "https://mygithub.gsk.com/gsk-tech/gsk-material-components-web-components.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,11 +16,11 @@
   "dependencies": {
     "@material/tab": "~2.3.0",
     "@material/tab-bar": "~2.3.0",
-    "@material/mwc-base": "~0.6.0",
-    "@material/mwc-tab": "~0.6.0",
-    "@material/mwc-tab-scroller": "~0.6.0"
+    "@gsk-platforms/mwc-base": "~0.8.36",
+    "@gsk-platforms/mwc-tab": "~0.8.36",
+    "@gsk-platforms/mwc-tab-scroller": "~0.8.36"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   }
 }
